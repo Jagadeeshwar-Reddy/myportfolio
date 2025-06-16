@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ProjectCard from '@components/ProjectCard';
 
-// Import project images
-import ubloodImage from '@assets/images/projects/ublood.jpg';
-import realestateImage from '@assets/images/projects/realestate.jpg';
-import ecommerceImage from '@assets/images/projects/ecommerce.jpg';
-import healthcareImage from '@assets/images/projects/healthcare.jpg';
+// Using placeholder images until actual project images are available
+const ubloodImage = 'https://placehold.co/600x400/2563eb/ffffff?text=UBlood';
+const realestateImage = 'https://placehold.co/600x400/16a34a/ffffff?text=Real+Estate';
+const ecommerceImage = 'https://placehold.co/600x400/d97706/ffffff?text=E-Commerce';
+const healthcareImage = 'https://placehold.co/600x400/dc2626/ffffff?text=Healthcare';
 
 const Portfolio = () => {
     const [ref, inView] = useInView({

@@ -2,9 +2,22 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from 'path';
 
+// https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react()],
-    base: '/myportfolio/',
+    base: '/myportfolio/',  // GitHub Pages repository name
+    build: {
+        outDir: 'dist',
+        assetsDir: 'assets',
+        sourcemap: true, // Enable source maps for debugging
+        rollupOptions: {
+            output: {
+                entryFileNames: 'assets/[name]-[hash].js',
+                chunkFileNames: 'assets/[name]-[hash].js',
+                assetFileNames: 'assets/[name]-[hash].[ext]'
+            }
+        }
+    },
     server: {
         port: 3000,
         open: true
@@ -21,6 +34,5 @@ export default defineConfig({
             '@constants': path.resolve(__dirname, './src/constants'),
             '@styles': path.resolve(__dirname, './src/styles')
         }
-    },
-    publicDir: 'public'
+    }
 });

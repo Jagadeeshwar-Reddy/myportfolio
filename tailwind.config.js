@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
     content: [
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
@@ -18,6 +18,7 @@ module.exports = {
                     700: '#0369a1',
                     800: '#075985',
                     900: '#0c4a6e',
+                    950: '#082f49',
                 },
                 slate: {
                     50: '#f8fafc',
@@ -34,18 +35,46 @@ module.exports = {
             },
             fontFamily: {
                 sans: ['Inter var', 'system-ui', 'sans-serif'],
-                display: ['Cal Sans', 'Inter var', 'system-ui', 'sans-serif'],
                 mono: ['JetBrains Mono', 'monospace'],
+                display: ['Space Grotesk', 'Inter var', 'system-ui', 'sans-serif'],
             },
             animation: {
-                'blink': 'blink 1s step-end infinite',
+                'gradient-x': 'gradient-x 15s ease infinite',
+                'gradient-y': 'gradient-y 15s ease infinite',
+                'gradient-xy': 'gradient-xy 15s ease infinite',
             },
             keyframes: {
-                blink: {
-                    '0%, 100%': { opacity: 1 },
-                    '50%': { opacity: 0 },
+                'gradient-y': {
+                    '0%, 100%': {
+                        'background-size': '400% 400%',
+                        'background-position': 'center top'
+                    },
+                    '50%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'center center'
+                    }
                 },
-            },
+                'gradient-x': {
+                    '0%, 100%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'left center'
+                    },
+                    '50%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'right center'
+                    }
+                },
+                'gradient-xy': {
+                    '0%, 100%': {
+                        'background-size': '400% 400%',
+                        'background-position': 'left center'
+                    },
+                    '50%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'right center'
+                    }
+                }
+            }
         },
     },
     plugins: [
