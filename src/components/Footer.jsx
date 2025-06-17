@@ -29,47 +29,76 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-gray-900 text-gray-300 py-12">
-            <div className="container mx-auto px-4">
+        <footer className="bg-slate-50 border-t border-slate-200">
+            <div className="container mx-auto px-4 py-16">
                 <div className="max-w-6xl mx-auto">
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="grid md:grid-cols-2 gap-12">
                         {/* About Section */}
-                        <div className="space-y-4">
-                            <h3 className="text-xl font-semibold text-white">About Me</h3>
-                            <p className="text-gray-400">
+                        <motion.div
+                            className="space-y-6"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                        >
+                            <h3 className="text-2xl font-bold text-gradient">About Me</h3>
+                            <p className="text-slate-600 leading-relaxed text-lg">
                                 Senior iOS Developer with 13+ years of experience in building
                                 enterprise-grade applications. Specializing in Swift, SwiftUI,
                                 and iOS development, with a focus on creating scalable and
-                                secure solutions.
+                                secure solutions that drive business growth.
                             </p>
-                        </div>
+                        </motion.div>
 
                         {/* Contact Info */}
-                        <div className="space-y-4 md:text-right">
-                            <h3 className="text-xl font-semibold text-white">Connect With Me</h3>
+                        <motion.div
+                            className="space-y-6 md:text-right"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <h3 className="text-2xl font-bold text-gradient">Connect With Me</h3>
                             <div className="flex flex-wrap gap-4 md:justify-end">
-                                {socialLinks.map((link) => (
+                                {socialLinks.map((link, index) => (
                                     <motion.a
                                         key={link.label}
                                         href={link.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-white transition-colors duration-200"
-                                        whileHover={{ scale: 1.1 }}
+                                        className="card p-4 rounded-xl hover:shadow-xl transition-all duration-300 group"
+                                        whileHover={{ scale: 1.1, y: -2 }}
                                         whileTap={{ scale: 0.95 }}
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        transition={{ duration: 0.4, delay: index * 0.1 }}
+                                        viewport={{ once: true }}
                                         aria-label={link.label}
                                     >
-                                        {link.icon}
+                                        <span className="text-2xl text-slate-600 group-hover:text-indigo-600 transition-colors">
+                                            {link.icon}
+                                        </span>
                                     </motion.a>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
 
                     {/* Copyright */}
-                    <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
-                        <p>&copy; {currentYear} Jagadeeshwar Reddy. All rights reserved.</p>
-                    </div>
+                    <motion.div
+                        className="mt-16 pt-8 border-t border-slate-300 text-center"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
+                    >
+                        <p className="text-slate-600 text-lg">
+                            &copy; {currentYear} Jagadeeshwar Reddy. All rights reserved.
+                        </p>
+                        <p className="text-slate-500 mt-2">
+                            Thanks for visiting!
+                        </p>
+                    </motion.div>
                 </div>
             </div>
         </footer>
