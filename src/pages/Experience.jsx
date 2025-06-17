@@ -81,51 +81,9 @@ const Experience = () => {
     // Use the original array order (current company first)
     const chronologicalExperiences = experiences;
 
-    const skills = [
-        { name: "Swift", level: 95, icon: <FaCode /> },
-        { name: "SwiftUI", level: 90, icon: <FaMobile /> },
-        { name: "Objective-C", level: 95, icon: <FaCode /> },
-        { name: "UIKit", level: 95, icon: <FaMobile /> },
-        { name: "Core Data", level: 90, icon: <FaCog /> },
-        { name: "Team Leadership", level: 88, icon: <FaUsers /> },
-        { name: "CI/CD", level: 85, icon: <FaTools /> },
-        { name: "Performance Optimization", level: 90, icon: <FaRocket /> },
-        { name: "REST APIs", level: 92, icon: <FaGlobe /> },
-        { name: "Git", level: 90, icon: <FaCode /> },
-        { name: "Testing", level: 85, icon: <FaShieldAlt /> },
-        { name: "Cloud Services", level: 80, icon: <FaCloud /> }
-    ];
-
-    const keyProjects = [
-        {
-            name: "Tesco Groceries iPhone & iPad",
-            description: "Feature-rich groceries shopping app for seamless online ordering and next-day doorstep delivery",
-            impact: "1.5M+ active users across 5 regions",
-            tech: "Swift 5, iOS 14 SDK, MVC/MVVM, GraphQL, UI Automation"
-        },
-        {
-            name: "UBlood",
-            description: "Blood donation application connecting donors and recipients through geolocation-based notifications",
-            impact: "Global platform for emergency blood donation",
-            tech: "Swift 5, iOS 14 SDK, REST APIs, Core Location"
-        },
-        {
-            name: "homePad & homePad Pro",
-            description: "First iPad app for real estate inventory management and inspection reports",
-            impact: "Revolutionary digital inventory management solution",
-            tech: "Objective-C & Swift, SQLite, PDF generation, Cloud backup"
-        },
-        {
-            name: "Sydney Airport App",
-            description: "Official airport app with live flight information and terminal navigation",
-            impact: "Enhanced travel experience for airport visitors",
-            tech: "Objective-C, SQLite, Push Notifications, SOAP web services"
-        }
-    ];
-
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
-            {/* Hero Section */}
+            {/* Timeline Section */}
             <section className="section relative overflow-hidden">
                 <div className="container">
                     <motion.div

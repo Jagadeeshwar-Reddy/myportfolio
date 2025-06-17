@@ -6,7 +6,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
-    { path: '/experience', label: 'Experience' },
     { path: '/portfolio', label: 'Portfolio' },
     { path: '/contact', label: 'Contact' },
 ];

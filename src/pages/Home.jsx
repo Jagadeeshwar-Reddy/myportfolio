@@ -12,6 +12,8 @@ import {
     FaMobile,
     FaRocket
 } from 'react-icons/fa';
+import Experience from './Experience';
+import TypeWriter from '../components/TypeWriter';
 
 const Home = () => {
     const socialLinks = [
@@ -93,7 +95,7 @@ const Home = () => {
                                     transition={{ delay: 0.6, duration: 0.6 }}
                                     className="text-3xl md:text-4xl font-bold text-slate-900"
                                 >
-                                    Senior iOS Developer
+                                    <TypeWriter words={["Principal iOS Engineer"]} typingSpeed={90} deletingSpeed={40} pauseTime={2500} />
                                 </motion.h2>
 
                                 <motion.p
@@ -192,6 +194,11 @@ const Home = () => {
                         </motion.div>
                     </div>
                 </div>
+            </section>
+
+            {/* Experience Timeline Section */}
+            <section className="section relative overflow-hidden">
+                <Experience />
             </section>
 
             {/* Features Section */}
