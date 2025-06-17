@@ -36,21 +36,21 @@ const SkillCard = ({ category, skills, delay = 0 }) => {
             variants={containerVariants}
             initial="hidden"
             animate={controls}
-            className="card p-6"
+            className="card p-4 sm:p-6"
         >
             <h3
-                className="mb-4"
+                className="mb-3 sm:mb-4"
                 style={{
                     color: 'var(--color-text-primary)',
                     fontFamily: 'var(--font-display)',
                     fontWeight: 'var(--font-weight-semibold)',
-                    fontSize: 'var(--font-size-xl)',
+                    fontSize: 'var(--font-size-lg)',
                     lineHeight: 'var(--line-height-tight)'
                 }}
             >
                 {category}
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
                 {skills.map((skill) => (
                     <motion.div key={skill.name} variants={skillVariants}>
                         <div className="flex justify-between mb-1">
@@ -59,7 +59,7 @@ const SkillCard = ({ category, skills, delay = 0 }) => {
                                     color: 'var(--color-text-secondary)',
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-sm)'
+                                    fontSize: 'var(--font-size-xs)'
                                 }}
                             >
                                 {skill.name}
@@ -68,18 +68,18 @@ const SkillCard = ({ category, skills, delay = 0 }) => {
                                 style={{
                                     color: 'var(--color-text-muted)',
                                     fontFamily: 'var(--font-primary)',
-                                    fontSize: 'var(--font-size-sm)'
+                                    fontSize: 'var(--font-size-xs)'
                                 }}
                             >
                                 {skill.level}%
                             </span>
                         </div>
                         <div
-                            className="w-full rounded-full h-2"
+                            className="w-full rounded-full h-1.5 sm:h-2"
                             style={{ background: 'var(--color-surface-light)' }}
                         >
                             <motion.div
-                                className="h-2 rounded-full"
+                                className="h-1.5 sm:h-2 rounded-full"
                                 style={{ background: 'var(--gradient-primary)' }}
                                 initial={{ width: 0 }}
                                 animate={isInView ? { width: `${skill.level}%` } : { width: 0 }}

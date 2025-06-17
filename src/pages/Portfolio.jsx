@@ -222,11 +222,11 @@ const Portfolio = () => {
                         className="text-center mb-16"
                     >
                         <h1
-                            className="text-gradient mb-6"
+                            className="text-gradient mb-4 lg:mb-6"
                             style={{
                                 fontFamily: 'var(--font-display)',
                                 fontWeight: 'var(--font-weight-bold)',
-                                fontSize: 'var(--font-size-6xl)',
+                                fontSize: 'var(--font-size-4xl)',
                                 lineHeight: 'var(--line-height-tight)',
                                 letterSpacing: 'var(--letter-spacing-tight)'
                             }}
@@ -234,11 +234,11 @@ const Portfolio = () => {
                             My Portfolio
                         </h1>
                         <p
-                            className="max-w-3xl mx-auto"
+                            className="max-w-3xl mx-auto px-4 lg:px-0"
                             style={{
                                 color: 'var(--color-text-secondary)',
                                 fontFamily: 'var(--font-primary)',
-                                fontSize: 'var(--font-size-xl)',
+                                fontSize: 'var(--font-size-lg)',
                                 lineHeight: 'var(--line-height-relaxed)'
                             }}
                         >
@@ -251,13 +251,13 @@ const Portfolio = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="flex flex-wrap justify-center gap-3 mb-12"
+                        className="flex flex-wrap justify-center gap-2 lg:gap-3 mb-8 lg:mb-12 px-4 lg:px-0"
                     >
                         {categories.map((category) => (
                             <button
                                 key={category.id}
                                 onClick={() => setSelectedCategory(category.id)}
-                                className={`px-6 py-3 rounded-xl transition-all duration-300 ${selectedCategory === category.id
+                                className={`px-4 lg:px-6 py-2 lg:py-3 rounded-xl transition-all duration-300 text-sm lg:text-base ${selectedCategory === category.id
                                     ? 'text-white shadow-lg'
                                     : 'hover:shadow-md'
                                     }`}
@@ -272,8 +272,7 @@ const Portfolio = () => {
                                         ? 'none'
                                         : '1px solid var(--color-border)',
                                     fontFamily: 'var(--font-primary)',
-                                    fontWeight: 'var(--font-weight-semibold)',
-                                    fontSize: 'var(--font-size-base)'
+                                    fontWeight: 'var(--font-weight-semibold)'
                                 }}
                             >
                                 {category.name}
@@ -289,7 +288,7 @@ const Portfolio = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.5 }}
-                            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 px-4 lg:px-0"
                         >
                             {filteredProjects.map((project, index) => (
                                 <motion.div

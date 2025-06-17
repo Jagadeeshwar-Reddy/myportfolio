@@ -95,30 +95,30 @@ const Contact = () => {
                             Get In Touch
                         </motion.h2>
 
-                        <div className="grid md:grid-cols-2 gap-12">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                             {/* Contact Information */}
                             <motion.div
                                 initial={{ opacity: 0, x: -30 }}
                                 animate={inView ? { opacity: 1, x: 0 } : {}}
                                 transition={{ duration: 0.6, delay: 0.4 }}
                             >
-                                <h3 className="text-2xl font-semibold mb-6" style={{ color: 'var(--color-text-primary)' }}>
+                                <h3 className="text-xl lg:text-2xl font-semibold mb-4 lg:mb-6" style={{ color: 'var(--color-text-primary)' }}>
                                     Contact Information
                                 </h3>
-                                <p className="mb-8 leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
+                                <p className="mb-6 lg:mb-8 leading-relaxed" style={{ color: 'var(--color-text-secondary)' }}>
                                     I'm always open to discussing new projects, creative ideas, or
                                     opportunities to be part of your vision. Feel free to reach out
                                     through any of the following channels.
                                 </p>
 
-                                <div className="space-y-6">
+                                <div className="space-y-4 lg:space-y-6">
                                     {contactInfo.map((info, index) => (
                                         <motion.a
                                             key={info.title}
                                             href={info.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-start gap-4 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                                            className="flex items-start gap-3 lg:gap-4 p-3 lg:p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
                                             style={{ background: 'var(--color-surface-card)' }}
                                             whileHover={{ scale: 1.02 }}
                                             whileTap={{ scale: 0.98 }}
@@ -128,28 +128,28 @@ const Contact = () => {
                                         >
                                             <div className="mt-1" style={{ color: 'var(--color-primary)' }}>{info.icon}</div>
                                             <div>
-                                                <h4 className="font-semibold" style={{ color: 'var(--color-text-primary)' }}>
+                                                <h4 className="font-semibold text-sm lg:text-base" style={{ color: 'var(--color-text-primary)' }}>
                                                     {info.title}
                                                 </h4>
-                                                <p style={{ color: 'var(--color-text-secondary)' }}>{info.content}</p>
+                                                <p className="text-sm lg:text-base" style={{ color: 'var(--color-text-secondary)' }}>{info.content}</p>
                                             </div>
                                         </motion.a>
                                     ))}
                                 </div>
 
                                 {/* Social Links */}
-                                <div className="mt-8">
-                                    <h4 className="text-lg font-semibold mb-4" style={{ color: 'var(--color-text-primary)' }}>
+                                <div className="mt-6 lg:mt-8">
+                                    <h4 className="text-base lg:text-lg font-semibold mb-3 lg:mb-4" style={{ color: 'var(--color-text-primary)' }}>
                                         Connect on Social Media
                                     </h4>
-                                    <div className="grid grid-cols-1 gap-4">
+                                    <div className="grid grid-cols-1 gap-3 lg:gap-4">
                                         {socialLinks.map((link, index) => (
                                             <motion.a
                                                 key={link.title}
                                                 href={link.link}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex items-center gap-4 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+                                                className="flex items-center gap-3 lg:gap-4 p-3 lg:p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
                                                 style={{ background: 'var(--color-surface-card)' }}
                                                 whileHover={{ scale: 1.02 }}
                                                 whileTap={{ scale: 0.98 }}
@@ -159,10 +159,10 @@ const Contact = () => {
                                             >
                                                 <div style={{ color: 'var(--color-primary)' }}>{link.icon}</div>
                                                 <div>
-                                                    <h4 className="font-semibold" style={{ color: 'var(--color-text-primary)' }}>
+                                                    <h4 className="font-semibold text-sm lg:text-base" style={{ color: 'var(--color-text-primary)' }}>
                                                         {link.title}
                                                     </h4>
-                                                    <p style={{ color: 'var(--color-text-secondary)' }}>{link.content}</p>
+                                                    <p className="text-sm lg:text-base" style={{ color: 'var(--color-text-secondary)' }}>{link.content}</p>
                                                 </div>
                                             </motion.a>
                                         ))}

@@ -34,7 +34,7 @@ const ProjectCard = ({ project }) => {
             }}
         >
             {/* Project Image */}
-            <div className="relative h-56 overflow-hidden">
+            <div className="relative h-48 sm:h-56 overflow-hidden">
                 <img
                     src={image}
                     alt={title}
@@ -47,13 +47,13 @@ const ProjectCard = ({ project }) => {
 
                 {/* Hover Overlay with Links */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="flex space-x-4">
+                    <div className="flex space-x-3 sm:space-x-4">
                         {githubUrl && githubUrl !== '#' && (
                             <motion.a
                                 href={githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 rounded-full transition-colors duration-200"
+                                className="p-2 sm:p-3 rounded-full transition-colors duration-200"
                                 style={{
                                     backgroundColor: 'var(--color-surface-glass)',
                                     color: 'var(--color-text-primary)',
@@ -65,7 +65,7 @@ const ProjectCard = ({ project }) => {
                                 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <FaGithub className="w-5 h-5" />
+                                <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
                             </motion.a>
                         )}
                         {demoUrl && demoUrl !== '#' && (
@@ -73,7 +73,7 @@ const ProjectCard = ({ project }) => {
                                 href={demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="p-3 rounded-full transition-colors duration-200"
+                                className="p-2 sm:p-3 rounded-full transition-colors duration-200"
                                 style={{
                                     backgroundColor: 'var(--color-surface-glass)',
                                     color: 'var(--color-text-primary)',
@@ -85,7 +85,7 @@ const ProjectCard = ({ project }) => {
                                 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                <FaExternalLinkAlt className="w-5 h-5" />
+                                <FaExternalLinkAlt className="w-4 h-4 sm:w-5 sm:h-5" />
                             </motion.a>
                         )}
                     </div>
@@ -93,15 +93,15 @@ const ProjectCard = ({ project }) => {
             </div>
 
             {/* Project Info */}
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
                 {/* Title */}
                 <h3
-                    className="mb-3 transition-colors duration-300"
+                    className="mb-2 sm:mb-3 transition-colors duration-300"
                     style={{
                         color: 'var(--color-text-primary)',
                         fontFamily: 'var(--font-display)',
                         fontWeight: 'var(--font-weight-bold)',
-                        fontSize: 'var(--font-size-xl)',
+                        fontSize: 'var(--font-size-lg)',
                         lineHeight: 'var(--line-height-tight)'
                     }}
                 >
@@ -110,11 +110,11 @@ const ProjectCard = ({ project }) => {
 
                 {/* Description */}
                 <p
-                    className="mb-4 line-clamp-3"
+                    className="mb-3 sm:mb-4 line-clamp-3"
                     style={{
                         color: 'var(--color-text-secondary)',
                         fontFamily: 'var(--font-primary)',
-                        fontSize: 'var(--font-size-sm)',
+                        fontSize: 'var(--font-size-xs)',
                         lineHeight: 'var(--line-height-relaxed)'
                     }}
                 >
@@ -124,40 +124,40 @@ const ProjectCard = ({ project }) => {
                 {/* Project Stats */}
                 {stats && (
                     <div
-                        className="grid grid-cols-2 gap-4 mb-4 p-3 rounded-xl"
+                        className="grid grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4 p-2 sm:p-3 rounded-xl"
                         style={{
                             backgroundColor: 'var(--color-surface-light)',
                             border: '1px solid var(--color-border)'
                         }}
                     >
                         <div
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-1 sm:gap-2"
                             style={{ color: 'var(--color-text-secondary)' }}
                         >
                             <FaUsers
-                                className="w-4 h-4"
+                                className="w-3 h-3 sm:w-4 sm:h-4"
                                 style={{ color: 'var(--color-primary)' }}
                             />
                             <span
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-sm)'
+                                    fontSize: 'var(--font-size-xs)'
                                 }}
                             >
                                 {stats.users} Users
                             </span>
                         </div>
                         <div
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-1 sm:gap-2"
                             style={{ color: 'var(--color-text-secondary)' }}
                         >
-                            <FaStar className="w-4 h-4 text-yellow-500" />
+                            <FaStar className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500" />
                             <span
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-sm)'
+                                    fontSize: 'var(--font-size-xs)'
                                 }}
                             >
                                 {stats.rating} Rating
@@ -168,13 +168,13 @@ const ProjectCard = ({ project }) => {
 
                 {/* Impact */}
                 {impact && (
-                    <div className="mb-4">
+                    <div className="mb-3 sm:mb-4">
                         <div
-                            className="flex items-center gap-2 mb-2"
+                            className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2"
                             style={{ color: 'var(--color-text-secondary)' }}
                         >
                             <FaChartLine
-                                className="w-4 h-4"
+                                className="w-3 h-3 sm:w-4 sm:h-4"
                                 style={{ color: 'var(--color-primary)' }}
                             />
                             <span
@@ -182,18 +182,18 @@ const ProjectCard = ({ project }) => {
                                     color: 'var(--color-text-primary)',
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-semibold)',
-                                    fontSize: 'var(--font-size-sm)'
+                                    fontSize: 'var(--font-size-xs)'
                                 }}
                             >
                                 Impact
                             </span>
                         </div>
                         <p
-                            className="p-3 rounded-xl border"
+                            className="p-2 sm:p-3 rounded-xl border"
                             style={{
                                 color: 'var(--color-text-secondary)',
                                 fontFamily: 'var(--font-primary)',
-                                fontSize: 'var(--font-size-sm)',
+                                fontSize: 'var(--font-size-xs)',
                                 lineHeight: 'var(--line-height-relaxed)',
                                 backgroundColor: 'var(--color-surface-light)',
                                 borderColor: 'var(--color-border)'
@@ -205,12 +205,12 @@ const ProjectCard = ({ project }) => {
                 )}
 
                 {/* Technologies */}
-                <div className="mb-4">
-                    <div className="flex flex-wrap gap-2">
-                        {technologies.slice(0, 4).map((tech) => (
+                <div className="mb-3 sm:mb-4">
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                        {technologies.slice(0, 3).map((tech) => (
                             <span
                                 key={tech}
-                                className="px-3 py-1.5 rounded-full border transition-colors duration-200"
+                                className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border transition-colors duration-200"
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
@@ -223,9 +223,9 @@ const ProjectCard = ({ project }) => {
                                 {tech}
                             </span>
                         ))}
-                        {technologies.length > 4 && (
+                        {technologies.length > 3 && (
                             <span
-                                className="px-3 py-1.5 rounded-full border"
+                                className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border"
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
@@ -235,7 +235,7 @@ const ProjectCard = ({ project }) => {
                                     borderColor: 'var(--color-border)'
                                 }}
                             >
-                                +{technologies.length - 4} more
+                                +{technologies.length - 3} more
                             </span>
                         )}
                     </div>
@@ -246,17 +246,17 @@ const ProjectCard = ({ project }) => {
                     className="flex items-center justify-between pt-2 border-t"
                     style={{ borderColor: 'var(--color-border)' }}
                 >
-                    <div className="flex gap-3">
+                    <div className="flex gap-2 sm:gap-3">
                         {githubUrl && githubUrl !== '#' && (
                             <a
                                 href={githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 transition-colors duration-200"
+                                className="flex items-center gap-1 sm:gap-2 transition-colors duration-200"
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-sm)',
+                                    fontSize: 'var(--font-size-xs)',
                                     color: 'var(--color-text-secondary)'
                                 }}
                                 onMouseEnter={(e) => {
@@ -266,7 +266,7 @@ const ProjectCard = ({ project }) => {
                                     e.target.style.color = 'var(--color-text-secondary)';
                                 }}
                             >
-                                <FaGithub className="w-4 h-4" />
+                                <FaGithub className="w-3 h-3 sm:w-4 sm:h-4" />
                                 <span>Code</span>
                             </a>
                         )}
@@ -275,11 +275,11 @@ const ProjectCard = ({ project }) => {
                                 href={demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 transition-colors duration-200"
+                                className="flex items-center gap-1 sm:gap-2 transition-colors duration-200"
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-sm)',
+                                    fontSize: 'var(--font-size-xs)',
                                     color: 'var(--color-text-secondary)'
                                 }}
                                 onMouseEnter={(e) => {
@@ -289,7 +289,7 @@ const ProjectCard = ({ project }) => {
                                     e.target.style.color = 'var(--color-text-secondary)';
                                 }}
                             >
-                                <FaExternalLinkAlt className="w-4 h-4" />
+                                <FaExternalLinkAlt className="w-3 h-3 sm:w-4 sm:h-4" />
                                 <span>View App</span>
                             </a>
                         )}
@@ -297,7 +297,7 @@ const ProjectCard = ({ project }) => {
                             <span
                                 style={{
                                     fontFamily: 'var(--font-primary)',
-                                    fontSize: 'var(--font-size-sm)',
+                                    fontSize: 'var(--font-size-xs)',
                                     fontStyle: 'italic',
                                     color: 'var(--color-text-muted)'
                                 }}
@@ -318,7 +318,7 @@ const ProjectCard = ({ project }) => {
                             e.target.style.color = 'var(--color-text-muted)';
                         }}
                     >
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </div>

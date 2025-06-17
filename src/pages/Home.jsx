@@ -440,22 +440,23 @@ const Home = () => {
                                 className="text-center"
                             >
                                 <div
-                                    className="text-gradient mb-2"
+                                    className="text-gradient mb-2 sm:text-5xl"
                                     style={{
                                         fontFamily: 'var(--font-display)',
                                         fontWeight: 'var(--font-weight-bold)',
-                                        fontSize: 'var(--font-size-5xl)',
+                                        fontSize: 'var(--font-size-3xl)',
                                         lineHeight: 'var(--line-height-tight)'
                                     }}
                                 >
                                     {stat.number}
                                 </div>
                                 <div
+                                    className="sm:text-base"
                                     style={{
                                         color: 'var(--color-text-secondary)',
                                         fontFamily: 'var(--font-primary)',
                                         fontWeight: 'var(--font-weight-medium)',
-                                        fontSize: 'var(--font-size-base)'
+                                        fontSize: 'var(--font-size-sm)'
                                     }}
                                 >
                                     {stat.label}

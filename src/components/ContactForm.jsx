@@ -82,21 +82,21 @@ const ContactForm = () => {
         }`;
 
     return (
-        <div className="card p-8">
+        <div className="card p-6 sm:p-8">
             <h3
-                className="mb-6"
+                className="mb-4 sm:mb-6"
                 style={{
                     color: 'var(--color-text-primary)',
                     fontFamily: 'var(--font-display)',
                     fontWeight: 'var(--font-weight-semibold)',
-                    fontSize: 'var(--font-size-2xl)',
+                    fontSize: 'var(--font-size-xl)',
                     lineHeight: 'var(--line-height-tight)'
                 }}
             >
                 Send Me a Message
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
                     <label
                         htmlFor="name"
@@ -120,7 +120,7 @@ const ContactForm = () => {
                         }}
                     />
                     {errors.name && (
-                        <p className="mt-1 text-sm" style={{ color: 'var(--color-error)' }}>{errors.name}</p>
+                        <p className="mt-1 text-xs sm:text-sm" style={{ color: 'var(--color-error)' }}>{errors.name}</p>
                     )}
                 </div>
 
@@ -147,7 +147,7 @@ const ContactForm = () => {
                         }}
                     />
                     {errors.email && (
-                        <p className="mt-1 text-sm" style={{ color: 'var(--color-error)' }}>{errors.email}</p>
+                        <p className="mt-1 text-xs sm:text-sm" style={{ color: 'var(--color-error)' }}>{errors.email}</p>
                     )}
                 </div>
 
@@ -174,7 +174,7 @@ const ContactForm = () => {
                         }}
                     />
                     {errors.subject && (
-                        <p className="mt-1 text-sm" style={{ color: 'var(--color-error)' }}>{errors.subject}</p>
+                        <p className="mt-1 text-xs sm:text-sm" style={{ color: 'var(--color-error)' }}>{errors.subject}</p>
                     )}
                 </div>
 
@@ -191,7 +191,7 @@ const ContactForm = () => {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        rows="5"
+                        rows="4"
                         className={inputClasses(errors.message)}
                         placeholder="Your message..."
                         style={{
@@ -201,14 +201,14 @@ const ContactForm = () => {
                         }}
                     />
                     {errors.message && (
-                        <p className="mt-1 text-sm" style={{ color: 'var(--color-error)' }}>{errors.message}</p>
+                        <p className="mt-1 text-xs sm:text-sm" style={{ color: 'var(--color-error)' }}>{errors.message}</p>
                     )}
                 </div>
 
                 <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+                    className="w-full flex items-center justify-center gap-2 px-4 sm:px-6 py-3 rounded-lg font-medium transition-colors duration-200 text-sm sm:text-base"
                     style={{
                         background: isSubmitting ? 'var(--color-text-muted)' : 'var(--gradient-primary)',
                         color: 'var(--color-text-inverse)',
@@ -222,7 +222,7 @@ const ContactForm = () => {
                     ) : (
                         <>
                             Send Message
-                            <FaPaperPlane className="w-4 h-4" />
+                            <FaPaperPlane className="w-3 h-3 sm:w-4 sm:h-4" />
                         </>
                     )}
                 </motion.button>
@@ -231,7 +231,7 @@ const ContactForm = () => {
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-center"
+                        className="text-center text-sm sm:text-base"
                         style={{ color: 'var(--color-success)' }}
                     >
                         Message sent successfully! I'll get back to you soon.
@@ -242,7 +242,7 @@ const ContactForm = () => {
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-center"
+                        className="text-center text-sm sm:text-base"
                         style={{ color: 'var(--color-error)' }}
                     >
                         Something went wrong. Please try again.

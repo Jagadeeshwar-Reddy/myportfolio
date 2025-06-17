@@ -90,14 +90,14 @@ const Experience = () => {
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-center mb-20"
+                        className="text-center mb-12 md:mb-20"
                     >
                         <h1
-                            className="text-gradient mb-6"
+                            className="text-gradient mb-4 md:mb-6"
                             style={{
                                 fontFamily: 'var(--font-display)',
                                 fontWeight: 'var(--font-weight-bold)',
-                                fontSize: 'var(--font-size-6xl)',
+                                fontSize: 'clamp(2rem, 5vw, 3.75rem)',
                                 lineHeight: 'var(--line-height-tight)',
                                 letterSpacing: 'var(--letter-spacing-tight)'
                             }}
@@ -108,7 +108,7 @@ const Experience = () => {
 
                     {/* Timeline */}
                     <div className="relative">
-                        {/* Central Timeline Line */}
+                        {/* Central Timeline Line - Hidden on mobile */}
                         <div
                             className="absolute left-[80%] transform -translate-x-1/2 w-1 hidden lg:block"
                             style={{
@@ -119,24 +119,40 @@ const Experience = () => {
                             }}
                         ></div>
 
-                        {/* Present Badge at Top */}
-                        <div className="absolute left-[80%] -translate-x-1/2 top-0 z-20">
+                        {/* Present Badge at Top - Responsive */}
+                        <div className="absolute left-[80%] -translate-x-1/2 top-0 z-20 hidden lg:block">
                             <div
-                                className="text-white px-8 py-3 rounded-full shadow-lg flex items-center space-x-2"
+                                className="text-white px-6 md:px-8 py-2 md:py-3 rounded-full shadow-lg flex items-center space-x-2"
                                 style={{
                                     background: 'var(--gradient-primary)',
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-bold)',
-                                    fontSize: 'var(--font-size-lg)'
+                                    fontSize: 'var(--font-size-base)'
                                 }}
                             >
-                                <FaBriefcase className="w-5 h-5" />
+                                <FaBriefcase className="w-4 h-4 md:w-5 md:h-5" />
+                                <span>Present</span>
+                            </div>
+                        </div>
+
+                        {/* Mobile Present Badge */}
+                        <div className="lg:hidden mb-8 text-center">
+                            <div
+                                className="inline-flex items-center space-x-2 text-white px-6 py-3 rounded-full shadow-lg"
+                                style={{
+                                    background: 'var(--gradient-primary)',
+                                    fontFamily: 'var(--font-primary)',
+                                    fontWeight: 'var(--font-weight-bold)',
+                                    fontSize: 'var(--font-size-base)'
+                                }}
+                            >
+                                <FaBriefcase className="w-4 h-4" />
                                 <span>Present</span>
                             </div>
                         </div>
 
                         {/* Timeline Items */}
-                        <div className="space-y-16 lg:space-y-24">
+                        <div className="space-y-8 md:space-y-12 lg:space-y-24">
                             {chronologicalExperiences.map((exp, index) => (
                                 <motion.div
                                     key={exp.company}
@@ -150,7 +166,7 @@ const Experience = () => {
                                     <div className="w-full lg:w-4/5 lg:pr-24">
                                         <motion.div
                                             whileHover={{ y: -5 }}
-                                            className="rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group p-6 md:p-8"
+                                            className="rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group p-4 md:p-6 lg:p-8"
                                             style={{
                                                 background: 'var(--color-surface-card)',
                                                 border: '1px solid var(--color-border)'
@@ -158,15 +174,15 @@ const Experience = () => {
                                         >
                                             {/* Card Header */}
                                             <div
-                                                className="p-8 border-b mb-6"
+                                                className="p-4 md:p-6 lg:p-8 border-b mb-4 md:mb-6"
                                                 style={{
                                                     background: 'var(--color-surface-light)',
                                                     borderColor: 'var(--color-border)'
                                                 }}
                                             >
-                                                <div className="flex items-center space-x-6">
+                                                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6">
                                                     <div
-                                                        className="w-20 h-20 flex items-center justify-center rounded-2xl shadow-md border p-3 group-hover:shadow-lg transition-all duration-300"
+                                                        className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-xl md:rounded-2xl shadow-md border p-2 md:p-3 group-hover:shadow-lg transition-all duration-300 flex-shrink-0"
                                                         style={{
                                                             background: 'var(--color-surface-card)',
                                                             borderColor: 'var(--color-border)'
@@ -182,7 +198,7 @@ const Experience = () => {
                                                             }}
                                                         />
                                                         <div
-                                                            className="text-2xl hidden"
+                                                            className="text-xl md:text-2xl hidden"
                                                             style={{
                                                                 display: 'none',
                                                                 color: 'var(--color-text-muted)'
@@ -191,14 +207,14 @@ const Experience = () => {
                                                             🏢
                                                         </div>
                                                     </div>
-                                                    <div className="flex-1">
+                                                    <div className="flex-1 min-w-0">
                                                         <h3
                                                             className="mb-1 group-hover:transition-colors duration-300"
                                                             style={{
                                                                 color: 'var(--color-text-primary)',
                                                                 fontFamily: 'var(--font-display)',
                                                                 fontWeight: 'var(--font-weight-bold)',
-                                                                fontSize: 'var(--font-size-2xl)',
+                                                                fontSize: 'clamp(1.125rem, 4vw, 1.5rem)',
                                                                 lineHeight: 'var(--line-height-tight)'
                                                             }}
                                                         >
@@ -210,17 +226,17 @@ const Experience = () => {
                                                                 color: 'var(--color-primary)',
                                                                 fontFamily: 'var(--font-primary)',
                                                                 fontWeight: 'var(--font-weight-semibold)',
-                                                                fontSize: 'var(--font-size-lg)'
+                                                                fontSize: 'clamp(0.875rem, 3vw, 1.125rem)'
                                                             }}
                                                         >
                                                             {exp.company}
                                                         </p>
                                                         <div
-                                                            className="flex items-center space-x-4"
+                                                            className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-4"
                                                             style={{
                                                                 color: 'var(--color-text-secondary)',
                                                                 fontFamily: 'var(--font-primary)',
-                                                                fontSize: 'var(--font-size-sm)'
+                                                                fontSize: 'var(--font-size-xs)'
                                                             }}
                                                         >
                                                             <div className="flex items-center space-x-1">
@@ -235,63 +251,65 @@ const Experience = () => {
                                                     </div>
                                                 </div>
                                             </div>
+
                                             {/* Key Impact Highlight */}
-                                            <div className="mb-6">
+                                            <div className="mb-4 md:mb-6">
                                                 <div className="flex items-center gap-2 mb-2" style={{ color: 'var(--color-text-secondary)' }}>
-                                                    <FaRocket className="w-5 h-5" style={{ color: 'var(--color-primary)' }} />
+                                                    <FaRocket className="w-4 h-4 md:w-5 md:h-5" style={{ color: 'var(--color-primary)' }} />
                                                     <span
                                                         style={{
                                                             color: 'var(--color-text-primary)',
                                                             fontFamily: 'var(--font-primary)',
                                                             fontWeight: 'var(--font-weight-semibold)',
-                                                            fontSize: 'var(--font-size-base)'
+                                                            fontSize: 'var(--font-size-sm)'
                                                         }}
                                                     >
                                                         Key Impact
                                                     </span>
                                                 </div>
                                                 <div
-                                                    className="p-4 rounded-xl border"
+                                                    className="p-3 md:p-4 rounded-xl border"
                                                     style={{
                                                         background: 'var(--color-surface-light)',
                                                         borderColor: 'var(--color-border)',
                                                         color: 'var(--color-text-secondary)',
                                                         fontFamily: 'var(--font-primary)',
                                                         fontWeight: 'var(--font-weight-medium)',
-                                                        fontSize: 'var(--font-size-sm)',
+                                                        fontSize: 'var(--font-size-xs)',
                                                         lineHeight: 'var(--line-height-relaxed)'
                                                     }}
                                                 >
                                                     {exp.achievements[0]}
                                                 </div>
                                             </div>
-                                            {/* Two-column layout for details */}
-                                            <div className="flex flex-col lg:flex-row gap-8">
+
+                                            {/* Responsive layout for details */}
+                                            <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
                                                 {/* Responsibilities */}
                                                 <div className="flex-1">
                                                     <div className="flex items-center gap-2 mb-3">
-                                                        <FaUsers className="w-5 h-5" style={{ color: 'var(--color-primary)' }} />
+                                                        <FaUsers className="w-4 h-4 md:w-5 md:h-5" style={{ color: 'var(--color-primary)' }} />
                                                         <h4
                                                             style={{
                                                                 color: 'var(--color-text-primary)',
                                                                 fontFamily: 'var(--font-display)',
                                                                 fontWeight: 'var(--font-weight-bold)',
-                                                                fontSize: 'var(--font-size-lg)',
+                                                                fontSize: 'var(--font-size-base)',
                                                                 lineHeight: 'var(--line-height-tight)'
                                                             }}
                                                         >
                                                             Key Responsibilities
                                                         </h4>
                                                     </div>
-                                                    <ul className="space-y-3">
+                                                    <ul className="space-y-2 md:space-y-3">
                                                         {exp.responsibilities.map((resp, idx) => (
                                                             <li key={idx} className="flex items-start gap-2">
-                                                                <FaCheckCircle className="mt-1 w-4 h-4 flex-shrink-0" style={{ color: 'var(--color-primary-light)' }} />
+                                                                <FaCheckCircle className="mt-0.5 md:mt-1 w-3 h-3 md:w-4 md:h-4 flex-shrink-0" style={{ color: 'var(--color-primary-light)' }} />
                                                                 <span
                                                                     style={{
                                                                         color: 'var(--color-text-secondary)',
                                                                         fontFamily: 'var(--font-primary)',
-                                                                        fontSize: 'var(--font-size-sm)',
+                                                                        fontSize: 'var(--font-size-xs)',
                                                                         lineHeight: 'var(--line-height-relaxed)'
                                                                     }}
                                                                 >
@@ -301,33 +319,34 @@ const Experience = () => {
                                                         ))}
                                                     </ul>
                                                 </div>
+
                                                 {/* Achievements & Tech Stack */}
-                                                <div className="flex-1 flex flex-col gap-8">
+                                                <div className="flex-1 flex flex-col gap-6 md:gap-8">
                                                     {/* Achievements */}
                                                     <div>
                                                         <div className="flex items-center gap-2 mb-3">
-                                                            <FaStar className="w-5 h-5" style={{ color: 'var(--color-accent)' }} />
+                                                            <FaStar className="w-4 h-4 md:w-5 md:h-5" style={{ color: 'var(--color-accent)' }} />
                                                             <h4
                                                                 style={{
                                                                     color: 'var(--color-text-primary)',
                                                                     fontFamily: 'var(--font-display)',
                                                                     fontWeight: 'var(--font-weight-bold)',
-                                                                    fontSize: 'var(--font-size-lg)',
+                                                                    fontSize: 'var(--font-size-base)',
                                                                     lineHeight: 'var(--line-height-tight)'
                                                                 }}
                                                             >
                                                                 Achievements
                                                             </h4>
                                                         </div>
-                                                        <ul className="space-y-3">
+                                                        <ul className="space-y-2 md:space-y-3">
                                                             {exp.achievements.map((ach, idx) => (
                                                                 <li key={idx} className="flex items-start gap-2">
-                                                                    <FaCheckCircle className="mt-1 w-4 h-4 flex-shrink-0" style={{ color: 'var(--color-accent)' }} />
+                                                                    <FaCheckCircle className="mt-0.5 md:mt-1 w-3 h-3 md:w-4 md:h-4 flex-shrink-0" style={{ color: 'var(--color-accent)' }} />
                                                                     <span
                                                                         style={{
                                                                             color: 'var(--color-text-secondary)',
                                                                             fontFamily: 'var(--font-primary)',
-                                                                            fontSize: 'var(--font-size-sm)',
+                                                                            fontSize: 'var(--font-size-xs)',
                                                                             lineHeight: 'var(--line-height-relaxed)'
                                                                         }}
                                                                     >
@@ -337,27 +356,28 @@ const Experience = () => {
                                                             ))}
                                                         </ul>
                                                     </div>
+
                                                     {/* Tech Stack */}
                                                     <div>
                                                         <div className="flex items-center gap-2 mb-3">
-                                                            <FaCode className="w-5 h-5" style={{ color: 'var(--color-primary)' }} />
+                                                            <FaCode className="w-4 h-4 md:w-5 md:h-5" style={{ color: 'var(--color-primary)' }} />
                                                             <h4
                                                                 style={{
                                                                     color: 'var(--color-text-primary)',
                                                                     fontFamily: 'var(--font-display)',
                                                                     fontWeight: 'var(--font-weight-bold)',
-                                                                    fontSize: 'var(--font-size-lg)',
+                                                                    fontSize: 'var(--font-size-base)',
                                                                     lineHeight: 'var(--line-height-tight)'
                                                                 }}
                                                             >
                                                                 Technologies
                                                             </h4>
                                                         </div>
-                                                        <div className="flex flex-wrap gap-2">
+                                                        <div className="flex flex-wrap gap-1.5 md:gap-2">
                                                             {exp.technologies.map((tech, idx) => (
                                                                 <span
                                                                     key={idx}
-                                                                    className="px-3 py-1 rounded-full border flex items-center gap-1"
+                                                                    className="px-2 md:px-3 py-1 rounded-full border flex items-center gap-1"
                                                                     style={{
                                                                         background: 'var(--color-surface-light)',
                                                                         color: 'var(--color-primary)',
@@ -367,23 +387,31 @@ const Experience = () => {
                                                                         fontSize: 'var(--font-size-xs)'
                                                                     }}
                                                                 >
-                                                                    <FaCode className="w-3 h-3" style={{ color: 'var(--color-primary-light)' }} /> {tech}
+                                                                    <FaCode className="w-2.5 h-2.5 md:w-3 md:h-3" style={{ color: 'var(--color-primary-light)' }} /> {tech}
                                                                 </span>
                                                             ))}
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+
                                             {/* Description at the bottom */}
-                                            <div className="mt-8 border-t pt-6" style={{ borderColor: 'var(--color-border)' }}>
-                                                <p className="leading-relaxed text-base" style={{ color: 'var(--color-text-secondary)' }}>
+                                            <div className="mt-6 md:mt-8 border-t pt-4 md:pt-6" style={{ borderColor: 'var(--color-border)' }}>
+                                                <p
+                                                    className="leading-relaxed"
+                                                    style={{
+                                                        color: 'var(--color-text-secondary)',
+                                                        fontSize: 'var(--font-size-xs)',
+                                                        fontFamily: 'var(--font-primary)'
+                                                    }}
+                                                >
                                                     {exp.description}
                                                 </p>
                                             </div>
                                         </motion.div>
                                     </div>
 
-                                    {/* Timeline Dot */}
+                                    {/* Timeline Dot - Hidden on mobile */}
                                     <div
                                         className="absolute left-[80%] transform -translate-x-1/2 w-6 h-6 rounded-full border-4 shadow-lg z-10 hidden lg:block"
                                         style={{
@@ -397,11 +425,11 @@ const Experience = () => {
                                         ></div>
                                     </div>
 
-                                    {/* Year Badge */}
+                                    {/* Year Badge - Hidden on mobile */}
                                     {index === 1 && (
-                                        <div className="absolute left-[80%] transform -translate-x-1/2 -translate-y-1/2 top-0 mb-6">
+                                        <div className="absolute left-[80%] transform -translate-x-1/2 -translate-y-1/2 top-0 mb-6 hidden lg:block">
                                             <div
-                                                className="text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg"
+                                                className="text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-bold shadow-lg"
                                                 style={{ background: 'var(--gradient-primary)' }}
                                             >
                                                 2015
@@ -412,11 +440,26 @@ const Experience = () => {
                             ))}
                         </div>
 
-                        {/* Timeline End Point */}
-                        <div className="absolute left-[80%] -translate-x-1/2 bottom-0 z-20">
+                        {/* Timeline End Point - Hidden on mobile */}
+                        <div className="absolute left-[80%] -translate-x-1/2 bottom-0 z-20 hidden lg:block">
                             <div
-                                className="text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg flex items-center"
+                                className="text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-bold shadow-lg flex items-center"
                                 style={{ background: 'var(--gradient-primary)' }}
+                            >
+                                <span>2011</span>
+                            </div>
+                        </div>
+
+                        {/* Mobile End Badge */}
+                        <div className="lg:hidden mt-8 text-center">
+                            <div
+                                className="inline-flex items-center text-white px-6 py-3 rounded-full shadow-lg"
+                                style={{
+                                    background: 'var(--gradient-primary)',
+                                    fontFamily: 'var(--font-primary)',
+                                    fontWeight: 'var(--font-weight-bold)',
+                                    fontSize: 'var(--font-size-base)'
+                                }}
                             >
                                 <span>2011</span>
                             </div>

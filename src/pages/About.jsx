@@ -80,7 +80,7 @@ const About = () => {
                         </motion.h2>
 
                         {/* About Content */}
-                        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+                        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center mb-12 lg:mb-16">
                             {/* About Text */}
                             <motion.div
                                 initial={{ opacity: 0, x: -30 }}
@@ -93,7 +93,7 @@ const About = () => {
                                         color: 'var(--color-text-primary)',
                                         fontFamily: 'var(--font-display)',
                                         fontWeight: 'var(--font-weight-semibold)',
-                                        fontSize: 'var(--font-size-2xl)',
+                                        fontSize: 'var(--font-size-xl)',
                                         lineHeight: 'var(--line-height-tight)'
                                     }}
                                 >
@@ -145,7 +145,7 @@ const About = () => {
 
                             {/* Skills Grid */}
                             <motion.div
-                                className="grid gap-6"
+                                className="grid gap-4 lg:gap-6"
                                 initial={{ opacity: 0, x: 30 }}
                                 animate={inView ? { opacity: 1, x: 0 } : {}}
                                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -163,7 +163,7 @@ const About = () => {
 
                         {/* Additional Info */}
                         <motion.div
-                            className="grid md:grid-cols-3 gap-8"
+                            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
                             initial={{ opacity: 0, y: 30 }}
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.8 }}
