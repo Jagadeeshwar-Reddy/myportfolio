@@ -32,7 +32,8 @@ export default defineConfig({
             '@utils': path.resolve(__dirname, './src/utils'),
             '@hooks': path.resolve(__dirname, './src/hooks'),
             '@constants': path.resolve(__dirname, './src/constants'),
-            '@styles': path.resolve(__dirname, './src/styles')
+            '@styles': path.resolve(__dirname, './src/styles'),
+            '@contexts': path.resolve(__dirname, './src/contexts')
         }
     }
 });

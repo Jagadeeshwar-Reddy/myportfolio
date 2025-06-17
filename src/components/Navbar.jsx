@@ -9,6 +9,8 @@ import {
     FolderIcon,
     EnvelopeIcon
 } from '@heroicons/react/24/outline';
+import ThemeToggle from './ThemeToggle';
+import { useTheme } from '@contexts/ThemeContext';
 
 const navLinks = [
     { path: '/', label: 'Home', icon: HomeIcon },
@@ -21,6 +23,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
     const menuRef = useRef(null);
+    const { isDark } = useTheme();
 
     // Close menu when clicking outside
     useEffect(() => {
@@ -60,7 +63,7 @@ const Navbar = () => {
 
     return (
         <motion.nav
-            className="fixed w-full z-50 transition-all duration-500 bg-white/95 backdrop-blur-xl shadow-lg border-b border-green-200"
+            className="fixed w-full z-50 transition-all duration-500 backdrop-blur-xl shadow-lg border-b glass"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
@@ -70,7 +73,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <Link
                         to="/"
-                        className="flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-xl p-2"
+                        className="flex-shrink-0 focus:outline-none focus:ring-2 rounded-xl p-2 focus-ring"
                         aria-label="Home"
                     >
                         <motion.h1
@@ -95,14 +98,20 @@ const Navbar = () => {
                                     {link.label}
                                 </NavLink>
                             ))}
+                            {/* Theme Toggle */}
+                            <ThemeToggle />
                         </div>
                     </div>
 
-                    {/* Mobile menu button */}
-                    <div className="md:hidden" ref={menuRef}>
+                    {/* Mobile menu button and theme toggle */}
+                    <div className="md:hidden flex items-center space-x-2" ref={menuRef}>
+                        {/* Theme Toggle for Mobile */}
+                        <ThemeToggle />
+
+                        {/* Mobile Menu Button */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="bg-white p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300 shadow-md"
+                            className="p-2 rounded-xl focus:outline-none focus:ring-2 transition-all duration-300 shadow-md nav-button"
                             aria-expanded={isOpen}
                             aria-controls="mobile-menu"
                             aria-label={isOpen ? 'Close menu' : 'Open menu'}
@@ -141,7 +150,8 @@ const Navbar = () => {
                     <>
                         {/* Backdrop */}
                         <motion.div
-                            className="fixed inset-0 bg-black/20 backdrop-blur-sm md:hidden"
+                            className="fixed inset-0 backdrop-blur-sm md:hidden"
+                            style={{ backgroundColor: isDark ? 'rgba(0, 0, 0, 0.5)' : 'rgba(0, 0, 0, 0.3)' }}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -152,7 +162,7 @@ const Navbar = () => {
                         {/* Menu */}
                         <motion.div
                             id="mobile-menu"
-                            className="md:hidden absolute w-full bg-white shadow-xl border-b border-slate-200"
+                            className="md:hidden absolute w-full shadow-xl border-b glass"
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
@@ -196,10 +206,7 @@ const Navbar = () => {
 const NavLink = ({ to, children, isActive, icon: Icon }) => (
     <Link
         to={to}
-        className={`nav-link px-4 py-2 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${isActive
-            ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-md'
-            : 'hover:bg-slate-100'
-            }`}
+        className={`nav-link px-4 py-2 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${isActive ? 'nav-link-active' : 'nav-link-inactive'}`}
         aria-current={isActive ? 'page' : undefined}
     >
         <Icon className="w-5 h-5" />
@@ -218,10 +225,7 @@ const MobileNavLink = ({ to, children, isActive, onClick, index, icon: Icon }) =
         <Link
             to={to}
             onClick={onClick}
-            className={`block px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-3 ${isActive
-                ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
-                : 'text-slate-700 hover:text-slate-900 hover:bg-slate-50'
-                }`}
+            className={`block px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-3 ${isActive ? 'nav-link-active' : 'nav-link-inactive'}`}
             aria-current={isActive ? 'page' : undefined}
         >
             <Icon className="w-5 h-5" />

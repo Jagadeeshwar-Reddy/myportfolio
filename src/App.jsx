@@ -16,21 +16,26 @@ import Contact from '@pages/Contact';
 import PageLoader from '@components/PageLoader';
 import ErrorBoundary from '@components/ErrorBoundary';
 
+// Context
+import { ThemeProvider } from '@contexts/ThemeContext';
+
 function App() {
     return (
-        <ErrorBoundary>
-            <AnimatePresence mode="wait">
-                <Routes>
-                    <Route path="/" element={<MainLayout />}>
-                        <Route index element={<Home />} />
-                        <Route path="about" element={<About />} />
-                        <Route path="experience" element={<Experience />} />
-                        <Route path="portfolio" element={<Portfolio />} />
-                        <Route path="contact" element={<Contact />} />
-                    </Route>
-                </Routes>
-            </AnimatePresence>
-        </ErrorBoundary>
+        <ThemeProvider>
+            <ErrorBoundary>
+                <AnimatePresence mode="wait">
+                    <Routes>
+                        <Route path="/" element={<MainLayout />}>
+                            <Route index element={<Home />} />
+                            <Route path="about" element={<About />} />
+                            <Route path="experience" element={<Experience />} />
+                            <Route path="portfolio" element={<Portfolio />} />
+                            <Route path="contact" element={<Contact />} />
+                        </Route>
+                    </Routes>
+                </AnimatePresence>
+            </ErrorBoundary>
+        </ThemeProvider>
     );
 }
 

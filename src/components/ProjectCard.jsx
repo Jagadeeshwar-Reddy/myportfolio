@@ -21,7 +21,17 @@ const ProjectCard = ({ project }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.4 }}
-            className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 hover:border-green-200"
+            className="group relative rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border"
+            style={{
+                backgroundColor: 'var(--color-surface-card)',
+                borderColor: 'var(--color-border)'
+            }}
+            onMouseEnter={(e) => {
+                e.target.style.borderColor = 'var(--color-primary)';
+            }}
+            onMouseLeave={(e) => {
+                e.target.style.borderColor = 'var(--color-border)';
+            }}
         >
             {/* Project Image */}
             <div className="relative h-56 overflow-hidden">
@@ -43,8 +53,16 @@ const ProjectCard = ({ project }) => {
                                 href={githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-white/90 backdrop-blur-sm text-slate-800 p-3 rounded-full hover:bg-white transition-colors duration-200"
-                                whileHover={{ scale: 1.1 }}
+                                className="p-3 rounded-full transition-colors duration-200"
+                                style={{
+                                    backgroundColor: 'var(--color-surface-glass)',
+                                    color: 'var(--color-text-primary)',
+                                    backdropFilter: 'blur(8px)'
+                                }}
+                                whileHover={{
+                                    scale: 1.1,
+                                    backgroundColor: 'var(--color-surface-card)'
+                                }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <FaGithub className="w-5 h-5" />
@@ -55,8 +73,16 @@ const ProjectCard = ({ project }) => {
                                 href={demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-white/90 backdrop-blur-sm text-slate-800 p-3 rounded-full hover:bg-white transition-colors duration-200"
-                                whileHover={{ scale: 1.1 }}
+                                className="p-3 rounded-full transition-colors duration-200"
+                                style={{
+                                    backgroundColor: 'var(--color-surface-glass)',
+                                    color: 'var(--color-text-primary)',
+                                    backdropFilter: 'blur(8px)'
+                                }}
+                                whileHover={{
+                                    scale: 1.1,
+                                    backgroundColor: 'var(--color-surface-card)'
+                                }}
                                 whileTap={{ scale: 0.95 }}
                             >
                                 <FaExternalLinkAlt className="w-5 h-5" />
@@ -70,7 +96,7 @@ const ProjectCard = ({ project }) => {
             <div className="p-6">
                 {/* Title */}
                 <h3
-                    className="mb-3 group-hover:text-green-600 transition-colors duration-300"
+                    className="mb-3 transition-colors duration-300"
                     style={{
                         color: 'var(--color-text-primary)',
                         fontFamily: 'var(--font-display)',
@@ -97,9 +123,21 @@ const ProjectCard = ({ project }) => {
 
                 {/* Project Stats */}
                 {stats && (
-                    <div className="grid grid-cols-2 gap-4 mb-4 p-3 bg-green-50 rounded-xl">
-                        <div className="flex items-center gap-2 text-slate-700">
-                            <FaUsers className="w-4 h-4 text-green-500" />
+                    <div
+                        className="grid grid-cols-2 gap-4 mb-4 p-3 rounded-xl"
+                        style={{
+                            backgroundColor: 'var(--color-surface-light)',
+                            border: '1px solid var(--color-border)'
+                        }}
+                    >
+                        <div
+                            className="flex items-center gap-2"
+                            style={{ color: 'var(--color-text-secondary)' }}
+                        >
+                            <FaUsers
+                                className="w-4 h-4"
+                                style={{ color: 'var(--color-primary)' }}
+                            />
                             <span
                                 style={{
                                     fontFamily: 'var(--font-primary)',
@@ -110,7 +148,10 @@ const ProjectCard = ({ project }) => {
                                 {stats.users} Users
                             </span>
                         </div>
-                        <div className="flex items-center gap-2 text-slate-700">
+                        <div
+                            className="flex items-center gap-2"
+                            style={{ color: 'var(--color-text-secondary)' }}
+                        >
                             <FaStar className="w-4 h-4 text-yellow-500" />
                             <span
                                 style={{
@@ -128,8 +169,14 @@ const ProjectCard = ({ project }) => {
                 {/* Impact */}
                 {impact && (
                     <div className="mb-4">
-                        <div className="flex items-center gap-2 text-slate-700 mb-2">
-                            <FaChartLine className="w-4 h-4 text-green-500" />
+                        <div
+                            className="flex items-center gap-2 mb-2"
+                            style={{ color: 'var(--color-text-secondary)' }}
+                        >
+                            <FaChartLine
+                                className="w-4 h-4"
+                                style={{ color: 'var(--color-primary)' }}
+                            />
                             <span
                                 style={{
                                     color: 'var(--color-text-primary)',
@@ -142,12 +189,14 @@ const ProjectCard = ({ project }) => {
                             </span>
                         </div>
                         <p
-                            className="bg-gradient-to-r from-green-50 to-emerald-50 p-3 rounded-xl border border-green-100"
+                            className="p-3 rounded-xl border"
                             style={{
                                 color: 'var(--color-text-secondary)',
                                 fontFamily: 'var(--font-primary)',
                                 fontSize: 'var(--font-size-sm)',
-                                lineHeight: 'var(--line-height-relaxed)'
+                                lineHeight: 'var(--line-height-relaxed)',
+                                backgroundColor: 'var(--color-surface-light)',
+                                borderColor: 'var(--color-border)'
                             }}
                         >
                             {impact}
@@ -161,11 +210,14 @@ const ProjectCard = ({ project }) => {
                         {technologies.slice(0, 4).map((tech) => (
                             <span
                                 key={tech}
-                                className="px-3 py-1.5 bg-green-50 text-green-700 rounded-full border border-green-100 hover:bg-green-100 transition-colors duration-200"
+                                className="px-3 py-1.5 rounded-full border transition-colors duration-200"
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-xs)'
+                                    fontSize: 'var(--font-size-xs)',
+                                    backgroundColor: 'var(--color-surface-light)',
+                                    color: 'var(--color-primary)',
+                                    borderColor: 'var(--color-border)'
                                 }}
                             >
                                 {tech}
@@ -173,11 +225,14 @@ const ProjectCard = ({ project }) => {
                         ))}
                         {technologies.length > 4 && (
                             <span
-                                className="px-3 py-1.5 bg-slate-50 text-slate-600 rounded-full border border-slate-200"
+                                className="px-3 py-1.5 rounded-full border"
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-xs)'
+                                    fontSize: 'var(--font-size-xs)',
+                                    backgroundColor: 'var(--color-surface-light)',
+                                    color: 'var(--color-text-muted)',
+                                    borderColor: 'var(--color-border)'
                                 }}
                             >
                                 +{technologies.length - 4} more
@@ -187,18 +242,28 @@ const ProjectCard = ({ project }) => {
                 </div>
 
                 {/* Project Links */}
-                <div className="flex items-center justify-between pt-2 border-t border-slate-100">
+                <div
+                    className="flex items-center justify-between pt-2 border-t"
+                    style={{ borderColor: 'var(--color-border)' }}
+                >
                     <div className="flex gap-3">
                         {githubUrl && githubUrl !== '#' && (
                             <a
                                 href={githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-slate-600 hover:text-green-600 transition-colors duration-200"
+                                className="flex items-center gap-2 transition-colors duration-200"
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-sm)'
+                                    fontSize: 'var(--font-size-sm)',
+                                    color: 'var(--color-text-secondary)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.color = 'var(--color-primary)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.color = 'var(--color-text-secondary)';
                                 }}
                             >
                                 <FaGithub className="w-4 h-4" />
@@ -210,11 +275,18 @@ const ProjectCard = ({ project }) => {
                                 href={demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-slate-600 hover:text-green-600 transition-colors duration-200"
+                                className="flex items-center gap-2 transition-colors duration-200"
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-sm)'
+                                    fontSize: 'var(--font-size-sm)',
+                                    color: 'var(--color-text-secondary)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.target.style.color = 'var(--color-primary)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.target.style.color = 'var(--color-text-secondary)';
                                 }}
                             >
                                 <FaExternalLinkAlt className="w-4 h-4" />
@@ -223,11 +295,11 @@ const ProjectCard = ({ project }) => {
                         )}
                         {(!githubUrl || githubUrl === '#') && (!demoUrl || demoUrl === '#') && (
                             <span
-                                className="text-slate-500 italic"
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontSize: 'var(--font-size-sm)',
-                                    fontStyle: 'italic'
+                                    fontStyle: 'italic',
+                                    color: 'var(--color-text-muted)'
                                 }}
                             >
                                 App Store Project
@@ -236,7 +308,16 @@ const ProjectCard = ({ project }) => {
                     </div>
 
                     {/* View More Indicator */}
-                    <div className="text-slate-400 group-hover:text-green-500 transition-colors duration-200">
+                    <div
+                        className="transition-colors duration-200"
+                        style={{ color: 'var(--color-text-muted)' }}
+                        onMouseEnter={(e) => {
+                            e.target.style.color = 'var(--color-primary)';
+                        }}
+                        onMouseLeave={(e) => {
+                            e.target.style.color = 'var(--color-text-muted)';
+                        }}
+                    >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
