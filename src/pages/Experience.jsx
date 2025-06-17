@@ -180,9 +180,51 @@ const Experience = () => {
                                                     borderColor: 'var(--color-border)'
                                                 }}
                                             >
-                                                <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6">
+                                                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6">
+                                                    <div className="flex-1 min-w-0">
+                                                        <h3
+                                                            className="mb-1 group-hover:transition-colors duration-300"
+                                                            style={{
+                                                                color: 'var(--color-text-primary)',
+                                                                fontFamily: 'var(--font-display)',
+                                                                fontWeight: 'var(--font-weight-bold)',
+                                                                fontSize: 'clamp(1.25rem, 4vw, 1.75rem)',
+                                                                lineHeight: 'var(--line-height-tight)'
+                                                            }}
+                                                        >
+                                                            {exp.position}
+                                                        </h3>
+                                                        <p
+                                                            className="mb-2"
+                                                            style={{
+                                                                color: 'var(--color-primary)',
+                                                                fontFamily: 'var(--font-primary)',
+                                                                fontWeight: 'var(--font-weight-semibold)',
+                                                                fontSize: 'clamp(1rem, 3vw, 1.25rem)'
+                                                            }}
+                                                        >
+                                                            {exp.company}
+                                                        </p>
+                                                        <div
+                                                            className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-4"
+                                                            style={{
+                                                                color: 'var(--color-text-secondary)',
+                                                                fontFamily: 'var(--font-primary)',
+                                                                fontSize: 'var(--font-size-sm)'
+                                                            }}
+                                                        >
+                                                            <div className="flex items-center space-x-1">
+                                                                <FaCalendarAlt className="w-3 h-3" style={{ color: 'var(--color-primary)' }} />
+                                                                <span>{exp.duration}</span>
+                                                            </div>
+                                                            <div className="flex items-center space-x-1">
+                                                                <FaMapMarkerAlt className="w-3 h-3" style={{ color: 'var(--color-primary)' }} />
+                                                                <span>{exp.location}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <div
-                                                        className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-xl md:rounded-2xl shadow-md border p-2 md:p-3 group-hover:shadow-lg transition-all duration-300 flex-shrink-0"
+                                                        className="w-24 h-20 md:w-32 md:h-24 lg:w-40 lg:h-28 flex items-center justify-center rounded-xl md:rounded-2xl shadow-md border p-2 md:p-3 group-hover:shadow-lg transition-all duration-300 flex-shrink-0"
                                                         style={{
                                                             background: 'var(--color-surface-card)',
                                                             borderColor: 'var(--color-border)'
@@ -198,55 +240,13 @@ const Experience = () => {
                                                             }}
                                                         />
                                                         <div
-                                                            className="text-xl md:text-2xl hidden"
+                                                            className="text-xl md:text-2xl lg:text-3xl hidden"
                                                             style={{
                                                                 display: 'none',
                                                                 color: 'var(--color-text-muted)'
                                                             }}
                                                         >
                                                             🏢
-                                                        </div>
-                                                    </div>
-                                                    <div className="flex-1 min-w-0">
-                                                        <h3
-                                                            className="mb-1 group-hover:transition-colors duration-300"
-                                                            style={{
-                                                                color: 'var(--color-text-primary)',
-                                                                fontFamily: 'var(--font-display)',
-                                                                fontWeight: 'var(--font-weight-bold)',
-                                                                fontSize: 'clamp(1.125rem, 4vw, 1.5rem)',
-                                                                lineHeight: 'var(--line-height-tight)'
-                                                            }}
-                                                        >
-                                                            {exp.position}
-                                                        </h3>
-                                                        <p
-                                                            className="mb-2"
-                                                            style={{
-                                                                color: 'var(--color-primary)',
-                                                                fontFamily: 'var(--font-primary)',
-                                                                fontWeight: 'var(--font-weight-semibold)',
-                                                                fontSize: 'clamp(0.875rem, 3vw, 1.125rem)'
-                                                            }}
-                                                        >
-                                                            {exp.company}
-                                                        </p>
-                                                        <div
-                                                            className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-4"
-                                                            style={{
-                                                                color: 'var(--color-text-secondary)',
-                                                                fontFamily: 'var(--font-primary)',
-                                                                fontSize: 'var(--font-size-xs)'
-                                                            }}
-                                                        >
-                                                            <div className="flex items-center space-x-1">
-                                                                <FaCalendarAlt className="w-3 h-3" style={{ color: 'var(--color-primary)' }} />
-                                                                <span>{exp.duration}</span>
-                                                            </div>
-                                                            <div className="flex items-center space-x-1">
-                                                                <FaMapMarkerAlt className="w-3 h-3" style={{ color: 'var(--color-primary)' }} />
-                                                                <span>{exp.location}</span>
-                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -275,7 +275,7 @@ const Experience = () => {
                                                         color: 'var(--color-text-secondary)',
                                                         fontFamily: 'var(--font-primary)',
                                                         fontWeight: 'var(--font-weight-medium)',
-                                                        fontSize: 'var(--font-size-xs)',
+                                                        fontSize: 'var(--font-size-sm)',
                                                         lineHeight: 'var(--line-height-relaxed)'
                                                     }}
                                                 >
@@ -294,7 +294,7 @@ const Experience = () => {
                                                                 color: 'var(--color-text-primary)',
                                                                 fontFamily: 'var(--font-display)',
                                                                 fontWeight: 'var(--font-weight-bold)',
-                                                                fontSize: 'var(--font-size-base)',
+                                                                fontSize: 'var(--font-size-lg)',
                                                                 lineHeight: 'var(--line-height-tight)'
                                                             }}
                                                         >
@@ -309,7 +309,7 @@ const Experience = () => {
                                                                     style={{
                                                                         color: 'var(--color-text-secondary)',
                                                                         fontFamily: 'var(--font-primary)',
-                                                                        fontSize: 'var(--font-size-xs)',
+                                                                        fontSize: 'var(--font-size-sm)',
                                                                         lineHeight: 'var(--line-height-relaxed)'
                                                                     }}
                                                                 >
@@ -331,7 +331,7 @@ const Experience = () => {
                                                                     color: 'var(--color-text-primary)',
                                                                     fontFamily: 'var(--font-display)',
                                                                     fontWeight: 'var(--font-weight-bold)',
-                                                                    fontSize: 'var(--font-size-base)',
+                                                                    fontSize: 'var(--font-size-lg)',
                                                                     lineHeight: 'var(--line-height-tight)'
                                                                 }}
                                                             >
@@ -346,7 +346,7 @@ const Experience = () => {
                                                                         style={{
                                                                             color: 'var(--color-text-secondary)',
                                                                             fontFamily: 'var(--font-primary)',
-                                                                            fontSize: 'var(--font-size-xs)',
+                                                                            fontSize: 'var(--font-size-sm)',
                                                                             lineHeight: 'var(--line-height-relaxed)'
                                                                         }}
                                                                     >
@@ -366,7 +366,7 @@ const Experience = () => {
                                                                     color: 'var(--color-text-primary)',
                                                                     fontFamily: 'var(--font-display)',
                                                                     fontWeight: 'var(--font-weight-bold)',
-                                                                    fontSize: 'var(--font-size-base)',
+                                                                    fontSize: 'var(--font-size-lg)',
                                                                     lineHeight: 'var(--line-height-tight)'
                                                                 }}
                                                             >
@@ -384,7 +384,7 @@ const Experience = () => {
                                                                         borderColor: 'var(--color-border)',
                                                                         fontFamily: 'var(--font-primary)',
                                                                         fontWeight: 'var(--font-weight-medium)',
-                                                                        fontSize: 'var(--font-size-xs)'
+                                                                        fontSize: 'var(--font-size-sm)'
                                                                     }}
                                                                 >
                                                                     <FaCode className="w-2.5 h-2.5 md:w-3 md:h-3" style={{ color: 'var(--color-primary-light)' }} /> {tech}
@@ -401,7 +401,7 @@ const Experience = () => {
                                                     className="leading-relaxed"
                                                     style={{
                                                         color: 'var(--color-text-secondary)',
-                                                        fontSize: 'var(--font-size-xs)',
+                                                        fontSize: 'var(--font-size-sm)',
                                                         fontFamily: 'var(--font-primary)'
                                                     }}
                                                 >
@@ -427,7 +427,7 @@ const Experience = () => {
 
                                     {/* Year Badge - Hidden on mobile */}
                                     {index === 1 && (
-                                        <div className="absolute left-[80%] transform -translate-x-1/2 -translate-y-1/2 top-0 mb-6 hidden lg:block">
+                                        <div className="absolute left-[80%] transform -translate-x-1/2 -translate-y-1/2 -top-20 mb-6 hidden lg:block">
                                             <div
                                                 className="text-white px-4 md:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-bold shadow-lg"
                                                 style={{ background: 'var(--gradient-primary)' }}
