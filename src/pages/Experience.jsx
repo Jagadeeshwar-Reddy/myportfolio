@@ -98,12 +98,12 @@ const Experience = () => {
                     {/* Timeline */}
                     <div className="relative">
                         {/* Central Timeline Line */}
-                        <div className="absolute left-[80%] transform -translate-x-1/2 w-1 bg-indigo-500 hidden lg:block"
+                        <div className="absolute left-[80%] transform -translate-x-1/2 w-1 bg-green-500 hidden lg:block"
                             style={{ top: '50px', bottom: '50px', height: 'auto' }}></div>
 
                         {/* Present Badge at Top */}
                         <div className="absolute left-[80%] -translate-x-1/2 top-0 z-20">
-                            <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg flex items-center space-x-2">
+                            <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg flex items-center space-x-2">
                                 <FaBriefcase className="w-5 h-5" />
                                 <span>Present</span>
                             </div>
@@ -147,19 +147,19 @@ const Experience = () => {
                                                         </div>
                                                     </div>
                                                     <div className="flex-1">
-                                                        <h3 className="text-2xl font-bold text-slate-900 mb-1 group-hover:text-indigo-600 transition-colors duration-300">
+                                                        <h3 className="text-2xl font-bold text-slate-900 mb-1 group-hover:text-green-600 transition-colors duration-300">
                                                             {exp.position}
                                                         </h3>
-                                                        <p className="text-lg text-indigo-600 font-semibold mb-2">
+                                                        <p className="text-lg text-green-600 font-semibold mb-2">
                                                             {exp.company}
                                                         </p>
                                                         <div className="flex items-center space-x-4 text-sm text-slate-600">
                                                             <div className="flex items-center space-x-1">
-                                                                <FaCalendarAlt className="text-indigo-500 w-3 h-3" />
+                                                                <FaCalendarAlt className="text-green-500 w-3 h-3" />
                                                                 <span>{exp.duration}</span>
                                                             </div>
                                                             <div className="flex items-center space-x-1">
-                                                                <FaMapMarkerAlt className="text-indigo-500 w-3 h-3" />
+                                                                <FaMapMarkerAlt className="text-green-500 w-3 h-3" />
                                                                 <span>{exp.location}</span>
                                                             </div>
                                                         </div>
@@ -181,13 +181,13 @@ const Experience = () => {
                                                 {/* Responsibilities */}
                                                 <div className="flex-1">
                                                     <div className="flex items-center gap-2 mb-3">
-                                                        <FaUsers className="text-indigo-500 w-5 h-5" />
+                                                        <FaUsers className="text-green-500 w-5 h-5" />
                                                         <h4 className="text-lg font-bold text-slate-900">Key Responsibilities</h4>
                                                     </div>
                                                     <ul className="space-y-3">
                                                         {exp.responsibilities.map((resp, idx) => (
                                                             <li key={idx} className="flex items-start gap-2">
-                                                                <FaCheckCircle className="text-indigo-400 mt-1 w-4 h-4 flex-shrink-0" />
+                                                                <FaCheckCircle className="text-green-400 mt-1 w-4 h-4 flex-shrink-0" />
                                                                 <span className="text-sm text-slate-700">{resp}</span>
                                                             </li>
                                                         ))}
@@ -213,16 +213,16 @@ const Experience = () => {
                                                     {/* Tech Stack */}
                                                     <div>
                                                         <div className="flex items-center gap-2 mb-3">
-                                                            <FaCode className="text-indigo-500 w-5 h-5" />
+                                                            <FaCode className="text-green-500 w-5 h-5" />
                                                             <h4 className="text-lg font-bold text-slate-900">Technologies</h4>
                                                         </div>
                                                         <div className="flex flex-wrap gap-2">
                                                             {exp.technologies.map((tech, idx) => (
                                                                 <span
                                                                     key={idx}
-                                                                    className="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-medium border border-indigo-100 flex items-center gap-1"
+                                                                    className="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-100 flex items-center gap-1"
                                                                 >
-                                                                    <FaCode className="w-3 h-3 text-indigo-400" /> {tech}
+                                                                    <FaCode className="w-3 h-3 text-green-400" /> {tech}
                                                                 </span>
                                                             ))}
                                                         </div>
@@ -239,14 +239,14 @@ const Experience = () => {
                                     </div>
 
                                     {/* Timeline Dot */}
-                                    <div className="absolute left-[80%] transform -translate-x-1/2 w-6 h-6 bg-indigo-500 rounded-full border-4 border-white shadow-lg z-10 hidden lg:block">
-                                        <div className="w-full h-full bg-indigo-500 rounded-full animate-pulse"></div>
+                                    <div className="absolute left-[80%] transform -translate-x-1/2 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg z-10 hidden lg:block">
+                                        <div className="w-full h-full bg-green-500 rounded-full animate-pulse"></div>
                                     </div>
 
                                     {/* Year Badge */}
                                     {index === 1 && (
                                         <div className="absolute left-[80%] transform -translate-x-1/2 -translate-y-1/2 top-0 mb-6">
-                                            <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                                            <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
                                                 2015
                                             </div>
                                         </div>
@@ -257,7 +257,7 @@ const Experience = () => {
 
                         {/* Timeline End Point */}
                         <div className="absolute left-[80%] -translate-x-1/2 bottom-0 z-20">
-                            <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg flex items-center">
+                            <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg flex items-center">
                                 <span>2011</span>
                             </div>
                         </div>

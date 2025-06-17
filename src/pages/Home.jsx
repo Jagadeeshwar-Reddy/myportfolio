@@ -75,7 +75,7 @@ const Home = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.2, duration: 0.6 }}
-                                    className="text-indigo-600 font-semibold text-lg"
+                                    className="text-green-600 font-semibold text-lg"
                                 >
                                     👋 Hello, I'm
                                 </motion.p>
@@ -153,7 +153,7 @@ const Home = () => {
                                         transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
                                         aria-label={link.label}
                                     >
-                                        <span className="text-2xl text-slate-600 group-hover:text-indigo-600 transition-colors">
+                                        <span className="text-2xl text-slate-600 group-hover:text-green-600 transition-colors">
                                             {link.icon}
                                         </span>
                                     </motion.a>
@@ -172,7 +172,7 @@ const Home = () => {
                                 <div className="card text-center">
                                     <div className="w-64 h-64 mx-auto relative">
                                         {/* Clean gradient circles */}
-                                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-100 to-cyan-100 animate-pulse"></div>
+                                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 animate-pulse"></div>
                                         <div className="absolute inset-4 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 animate-pulse delay-1000"></div>
                                         <div className="absolute inset-8 rounded-full bg-gradient-to-r from-blue-100 to-teal-100 animate-pulse delay-2000"></div>
 
@@ -189,7 +189,7 @@ const Home = () => {
                             </div>
 
                             {/* Subtle floating elements */}
-                            <div className="absolute top-10 -right-10 w-20 h-20 bg-gradient-to-r from-indigo-200 to-cyan-200 rounded-full opacity-60 animate-bounce"></div>
+                            <div className="absolute top-10 -right-10 w-20 h-20 bg-gradient-to-r from-green-200 to-emerald-200 rounded-full opacity-60 animate-bounce"></div>
                             <div className="absolute bottom-10 -left-10 w-16 h-16 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full opacity-60 animate-bounce delay-1000"></div>
                         </motion.div>
                     </div>
@@ -228,7 +228,7 @@ const Home = () => {
                                 className="card-hover text-center group"
                             >
                                 <div className="mb-6 flex justify-center">
-                                    <div className="p-4 rounded-2xl bg-gradient-to-r from-indigo-100 to-cyan-100 group-hover:from-indigo-200 group-hover:to-cyan-200 transition-all duration-300">
+                                    <div className="p-4 rounded-2xl bg-gradient-to-r from-green-100 to-emerald-100 group-hover:from-green-200 group-hover:to-emerald-200 transition-all duration-300">
                                         <span className="text-gradient">{feature.icon}</span>
                                     </div>
                                 </div>

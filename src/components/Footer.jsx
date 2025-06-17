@@ -75,7 +75,7 @@ const Footer = () => {
                                         viewport={{ once: true }}
                                         aria-label={link.label}
                                     >
-                                        <span className="text-2xl text-slate-600 group-hover:text-indigo-600 transition-colors">
+                                        <span className="text-2xl text-slate-600 group-hover:text-green-600 transition-colors">
                                             {link.icon}
                                         </span>
                                     </motion.a>

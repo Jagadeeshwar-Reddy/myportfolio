@@ -69,7 +69,7 @@ const ProjectCard = ({ project }) => {
             {/* Project Info */}
             <div className="p-6">
                 {/* Title */}
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
                     {title}
                 </h3>
 
@@ -82,7 +82,7 @@ const ProjectCard = ({ project }) => {
                 {stats && (
                     <div className="grid grid-cols-2 gap-4 mb-4 p-3 bg-slate-50 rounded-xl">
                         <div className="flex items-center gap-2 text-slate-700">
-                            <FaUsers className="w-4 h-4 text-indigo-500" />
+                            <FaUsers className="w-4 h-4 text-green-500" />
                             <span className="text-sm font-medium">{stats.users} Users</span>
                         </div>
                         <div className="flex items-center gap-2 text-slate-700">
@@ -111,7 +111,7 @@ const ProjectCard = ({ project }) => {
                         {technologies.slice(0, 4).map((tech) => (
                             <span
                                 key={tech}
-                                className="px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-full text-xs font-medium border border-indigo-100 hover:bg-indigo-100 transition-colors duration-200"
+                                className="px-3 py-1.5 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-100 hover:bg-green-100 transition-colors duration-200"
                             >
                                 {tech}
                             </span>
@@ -132,7 +132,7 @@ const ProjectCard = ({ project }) => {
                                 href={githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-slate-600 hover:text-indigo-600 transition-colors duration-200 text-sm font-medium"
+                                className="flex items-center gap-2 text-slate-600 hover:text-green-600 transition-colors duration-200 text-sm font-medium"
                             >
                                 <FaGithub className="w-4 h-4" />
                                 <span>Code</span>
@@ -143,7 +143,7 @@ const ProjectCard = ({ project }) => {
                                 href={demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-slate-600 hover:text-indigo-600 transition-colors duration-200 text-sm font-medium"
+                                className="flex items-center gap-2 text-slate-600 hover:text-green-600 transition-colors duration-200 text-sm font-medium"
                             >
                                 <FaExternalLinkAlt className="w-4 h-4" />
                                 <span>View App</span>
@@ -155,7 +155,7 @@ const ProjectCard = ({ project }) => {
                     </div>
 
                     {/* View More Indicator */}
-                    <div className="text-slate-400 group-hover:text-indigo-500 transition-colors duration-200">
+                    <div className="text-slate-400 group-hover:text-green-500 transition-colors duration-200">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>

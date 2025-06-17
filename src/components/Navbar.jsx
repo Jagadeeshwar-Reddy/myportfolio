@@ -77,7 +77,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <Link
                         to="/"
-                        className="flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-xl p-2"
+                        className="flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-xl p-2"
                         aria-label="Home"
                     >
                         <motion.h1
@@ -108,7 +108,7 @@ const Navbar = () => {
                     <div className="md:hidden" ref={menuRef}>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="bg-white p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300 shadow-md"
+                            className="bg-white p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-300 shadow-md"
                             aria-expanded={isOpen}
                             aria-controls="mobile-menu"
                             aria-label={isOpen ? 'Close menu' : 'Open menu'}
@@ -202,7 +202,7 @@ const NavLink = ({ to, children, isActive }) => (
     <Link
         to={to}
         className={`nav-link px-4 py-2 rounded-xl font-medium transition-all duration-300 ${isActive
-            ? 'bg-gradient-to-r from-indigo-500 to-cyan-500 text-white shadow-md'
+            ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-md'
             : 'hover:bg-slate-100'
             }`}
         aria-current={isActive ? 'page' : undefined}
@@ -223,7 +223,7 @@ const MobileNavLink = ({ to, children, isActive, onClick, index }) => (
             to={to}
             onClick={onClick}
             className={`block px-4 py-3 rounded-xl font-medium transition-all duration-300 ${isActive
-                ? 'bg-gradient-to-r from-indigo-500 to-cyan-500 text-white'
+                ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
                 : 'text-slate-700 hover:text-slate-900 hover:bg-slate-50'
                 }`}
             aria-current={isActive ? 'page' : undefined}
