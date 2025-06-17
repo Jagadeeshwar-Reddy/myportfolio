@@ -15,7 +15,9 @@ import {
     FaGlobe,
     FaCloud,
     FaTools,
-    FaCheckCircle
+    FaCheckCircle,
+    FaBriefcase,
+    FaStar
 } from 'react-icons/fa';
 
 // Import company logos
@@ -28,6 +30,7 @@ const Experience = () => {
             company: "Tesco Bengaluru Pvt Ltd",
             position: "Software Development Engineer II",
             duration: "Aug 2015 - Present",
+            year: "2015",
             location: "Bengaluru, Karnataka",
             type: "Full-time",
             logo: tescoLogo,
@@ -52,6 +55,7 @@ const Experience = () => {
             company: "TeleParadigm Networks Ltd",
             position: "Senior Software Engineer",
             duration: "August 2011 - July 2015",
+            year: "2011",
             location: "Hyderabad, India",
             type: "Full-time",
             logo: teleparadigmLogo,
@@ -73,6 +77,9 @@ const Experience = () => {
             ]
         }
     ];
+
+    // Use the original array order (current company first)
+    const chronologicalExperiences = experiences;
 
     const skills = [
         { name: "Swift", level: 95, icon: <FaCode /> },
@@ -127,143 +134,175 @@ const Experience = () => {
                         transition={{ duration: 0.8 }}
                         className="text-center mb-20"
                     >
-                        <h1 className="text-gradient mb-6 text-5xl md:text-6xl font-bold">Professional Experience</h1>
-                        <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-                            Over 13+ years of experience in iOS development, specializing in scalable and secure solutions
-                            for diverse industries including e-commerce, real estate, and healthcare.
-                        </p>
+                        <h1 className="text-gradient mb-6 text-5xl md:text-6xl font-bold">Professional Journey</h1>
                     </motion.div>
 
-                    {/* Experience Timeline */}
-                    <div className="space-y-20">
-                        {experiences.map((exp, index) => (
-                            <motion.div
-                                key={exp.company}
-                                initial={{ opacity: 0, y: 50 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: index * 0.2 }}
-                                viewport={{ once: true }}
-                                className="group relative"
-                            >
-                                <div className="bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-slate-200 overflow-hidden">
-                                    <div className="grid lg:grid-cols-5 gap-0">
-                                        {/* Company Info with Large Logo */}
-                                        <div className="lg:col-span-2 bg-gradient-to-br from-slate-50 to-white p-8 lg:p-12">
-                                            <div className="flex flex-col items-center lg:items-start space-y-8">
-                                                {/* Large Logo Container */}
-                                                <div className="w-56 h-36 lg:w-72 lg:h-44 flex items-center justify-center bg-white rounded-2xl shadow-lg border border-slate-200 p-6 group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
-                                                    <img
-                                                        src={exp.logo}
-                                                        alt={`${exp.company} logo`}
-                                                        className="max-w-full max-h-full object-contain"
-                                                        onError={(e) => {
-                                                            e.target.style.display = 'none';
-                                                            e.target.nextSibling.style.display = 'block';
-                                                        }}
-                                                    />
-                                                    <div
-                                                        className="text-6xl text-slate-400 hidden"
-                                                        style={{ display: 'none' }}
-                                                    >
-                                                        🏢
-                                                    </div>
-                                                </div>
+                    {/* Timeline */}
+                    <div className="relative">
+                        {/* Central Timeline Line */}
+                        <div className="absolute left-[80%] transform -translate-x-1/2 w-1 bg-indigo-500 hidden lg:block"
+                            style={{ top: '50px', bottom: '50px', height: 'auto' }}></div>
 
-                                                {/* Company Details */}
-                                                <div className="text-center lg:text-left space-y-6">
-                                                    <div>
-                                                        <p className="text-2xl lg:text-3xl font-bold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors duration-300">
+                        {/* Present Badge at Top */}
+                        <div className="absolute left-[80%] -translate-x-1/2 top-0 z-20">
+                            <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg flex items-center space-x-2">
+                                <FaBriefcase className="w-5 h-5" />
+                                <span>Present</span>
+                            </div>
+                        </div>
+
+                        {/* Timeline Items */}
+                        <div className="space-y-16 lg:space-y-24">
+                            {chronologicalExperiences.map((exp, index) => (
+                                <motion.div
+                                    key={exp.company}
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.8, delay: index * 0.2 }}
+                                    viewport={{ once: true }}
+                                    className="relative flex items-center lg:gap-12"
+                                >
+                                    {/* Experience Card */}
+                                    <div className="w-full lg:w-4/5 lg:pr-24">
+                                        <motion.div
+                                            whileHover={{ y: -5 }}
+                                            className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-slate-200 overflow-hidden group p-6 md:p-8"
+                                        >
+                                            {/* Card Header */}
+                                            <div className="bg-gradient-to-r from-slate-50 to-white p-8 border-b border-slate-100 mb-6">
+                                                <div className="flex items-center space-x-6">
+                                                    <div className="w-20 h-20 flex items-center justify-center bg-white rounded-2xl shadow-md border border-slate-200 p-3 group-hover:shadow-lg transition-all duration-300">
+                                                        <img
+                                                            src={exp.logo}
+                                                            alt={`${exp.company} logo`}
+                                                            className="max-w-full max-h-full object-contain"
+                                                            onError={(e) => {
+                                                                e.target.style.display = 'none';
+                                                                e.target.nextSibling.style.display = 'block';
+                                                            }}
+                                                        />
+                                                        <div
+                                                            className="text-2xl text-slate-400 hidden"
+                                                            style={{ display: 'none' }}
+                                                        >
+                                                            🏢
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex-1">
+                                                        <h3 className="text-2xl font-bold text-slate-900 mb-1 group-hover:text-indigo-600 transition-colors duration-300">
                                                             {exp.position}
+                                                        </h3>
+                                                        <p className="text-lg text-indigo-600 font-semibold mb-2">
+                                                            {exp.company}
                                                         </p>
-                                                    </div>
-
-                                                    <div className="space-y-4 text-sm">
-                                                        <div className="flex items-center justify-center lg:justify-start space-x-3 p-3 bg-white rounded-xl border border-slate-200">
-                                                            <FaCalendarAlt className="text-indigo-500 w-4 h-4" />
-                                                            <span className="font-semibold text-slate-700">{exp.duration}</span>
-                                                        </div>
-                                                        <div className="flex items-center justify-center lg:justify-start space-x-3 p-3 bg-white rounded-xl border border-slate-200">
-                                                            <FaMapMarkerAlt className="text-indigo-500 w-4 h-4" />
-                                                            <span className="font-semibold text-slate-700">{exp.location}</span>
-                                                        </div>
-                                                        <div className="flex items-center justify-center lg:justify-start space-x-3 p-3 bg-white rounded-xl border border-slate-200">
-                                                            <FaBuilding className="text-indigo-500 w-4 h-4" />
-                                                            <span className="font-semibold text-slate-700">{exp.type}</span>
+                                                        <div className="flex items-center space-x-4 text-sm text-slate-600">
+                                                            <div className="flex items-center space-x-1">
+                                                                <FaCalendarAlt className="text-indigo-500 w-3 h-3" />
+                                                                <span>{exp.duration}</span>
+                                                            </div>
+                                                            <div className="flex items-center space-x-1">
+                                                                <FaMapMarkerAlt className="text-indigo-500 w-3 h-3" />
+                                                                <span>{exp.location}</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-
-                                        {/* Details */}
-                                        <div className="lg:col-span-3 p-8 lg:p-12">
-                                            <div className="space-y-8">
-                                                {/* Description */}
-                                                <div>
-                                                    <p className="text-slate-600 leading-relaxed text-lg">
-                                                        {exp.description}
-                                                    </p>
+                                            {/* Key Impact Highlight */}
+                                            <div className="mb-6">
+                                                <div className="flex items-center gap-2 text-slate-700 mb-2">
+                                                    <FaRocket className="w-5 h-5 text-green-500" />
+                                                    <span className="text-base font-semibold text-slate-900">Key Impact</span>
                                                 </div>
-
+                                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl border border-green-100 text-slate-700 font-medium text-sm">
+                                                    {exp.achievements[0]}
+                                                </div>
+                                            </div>
+                                            {/* Two-column layout for details */}
+                                            <div className="flex flex-col lg:flex-row gap-8">
                                                 {/* Responsibilities */}
-                                                <div>
-                                                    <div className="flex items-center gap-3 mb-4">
+                                                <div className="flex-1">
+                                                    <div className="flex items-center gap-2 mb-3">
                                                         <FaUsers className="text-indigo-500 w-5 h-5" />
-                                                        <h4 className="text-xl font-bold text-slate-900">Key Responsibilities</h4>
+                                                        <h4 className="text-lg font-bold text-slate-900">Key Responsibilities</h4>
                                                     </div>
-                                                    <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                                                        <ul className="space-y-3">
-                                                            {exp.responsibilities.map((resp, idx) => (
-                                                                <li key={idx} className="flex items-start space-x-3">
-                                                                    <span className="text-indigo-500 mt-1.5 w-2 h-2 bg-indigo-500 rounded-full flex-shrink-0"></span>
-                                                                    <span className="text-slate-700 leading-relaxed">{resp}</span>
-                                                                </li>
-                                                            ))}
-                                                        </ul>
-                                                    </div>
-                                                </div>
-
-                                                {/* Technologies */}
-                                                <div>
-                                                    <div className="flex items-center gap-3 mb-4">
-                                                        <FaCode className="text-indigo-500 w-5 h-5" />
-                                                        <h4 className="text-xl font-bold text-slate-900">Technologies Used</h4>
-                                                    </div>
-                                                    <div className="flex flex-wrap gap-3">
-                                                        {exp.technologies.map((tech, idx) => (
-                                                            <span
-                                                                key={idx}
-                                                                className="px-4 py-2 bg-indigo-50 text-indigo-700 rounded-full text-sm font-medium border border-indigo-100 hover:bg-indigo-100 transition-colors duration-200"
-                                                            >
-                                                                {tech}
-                                                            </span>
+                                                    <ul className="space-y-3">
+                                                        {exp.responsibilities.map((resp, idx) => (
+                                                            <li key={idx} className="flex items-start gap-2">
+                                                                <FaCheckCircle className="text-indigo-400 mt-1 w-4 h-4 flex-shrink-0" />
+                                                                <span className="text-sm text-slate-700">{resp}</span>
+                                                            </li>
                                                         ))}
-                                                    </div>
+                                                    </ul>
                                                 </div>
-
-                                                {/* Achievements */}
-                                                <div>
-                                                    <div className="flex items-center gap-3 mb-4">
-                                                        <FaRocket className="text-green-500 w-5 h-5" />
-                                                        <h4 className="text-xl font-bold text-slate-900">Key Achievements</h4>
-                                                    </div>
-                                                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
+                                                {/* Achievements & Tech Stack */}
+                                                <div className="flex-1 flex flex-col gap-8">
+                                                    {/* Achievements */}
+                                                    <div>
+                                                        <div className="flex items-center gap-2 mb-3">
+                                                            <FaStar className="text-yellow-500 w-5 h-5" />
+                                                            <h4 className="text-lg font-bold text-slate-900">Achievements</h4>
+                                                        </div>
                                                         <ul className="space-y-3">
-                                                            {exp.achievements.map((achievement, idx) => (
-                                                                <li key={idx} className="flex items-start space-x-3">
-                                                                    <FaCheckCircle className="text-green-500 w-5 h-5 mt-0.5 flex-shrink-0" />
-                                                                    <span className="text-slate-700 leading-relaxed">{achievement}</span>
+                                                            {exp.achievements.map((ach, idx) => (
+                                                                <li key={idx} className="flex items-start gap-2">
+                                                                    <FaCheckCircle className="text-yellow-400 mt-1 w-4 h-4 flex-shrink-0" />
+                                                                    <span className="text-sm text-slate-700">{ach}</span>
                                                                 </li>
                                                             ))}
                                                         </ul>
+                                                    </div>
+                                                    {/* Tech Stack */}
+                                                    <div>
+                                                        <div className="flex items-center gap-2 mb-3">
+                                                            <FaCode className="text-indigo-500 w-5 h-5" />
+                                                            <h4 className="text-lg font-bold text-slate-900">Technologies</h4>
+                                                        </div>
+                                                        <div className="flex flex-wrap gap-2">
+                                                            {exp.technologies.map((tech, idx) => (
+                                                                <span
+                                                                    key={idx}
+                                                                    className="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-medium border border-indigo-100 flex items-center gap-1"
+                                                                >
+                                                                    <FaCode className="w-3 h-3 text-indigo-400" /> {tech}
+                                                                </span>
+                                                            ))}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                            {/* Description at the bottom */}
+                                            <div className="mt-8 border-t border-slate-100 pt-6">
+                                                <p className="text-slate-600 leading-relaxed text-base">
+                                                    {exp.description}
+                                                </p>
+                                            </div>
+                                        </motion.div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        ))}
+
+                                    {/* Timeline Dot */}
+                                    <div className="absolute left-[80%] transform -translate-x-1/2 w-6 h-6 bg-indigo-500 rounded-full border-4 border-white shadow-lg z-10 hidden lg:block">
+                                        <div className="w-full h-full bg-indigo-500 rounded-full animate-pulse"></div>
+                                    </div>
+
+                                    {/* Year Badge */}
+                                    {index === 1 && (
+                                        <div className="absolute left-[80%] transform -translate-x-1/2 -translate-y-1/2 top-0 mb-6">
+                                            <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                                                2015
+                                            </div>
+                                        </div>
+                                    )}
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Timeline End Point */}
+                        <div className="absolute left-[80%] -translate-x-1/2 bottom-0 z-20">
+                            <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg flex items-center">
+                                <span>2011</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
