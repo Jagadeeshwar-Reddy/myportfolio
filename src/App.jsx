@@ -8,6 +8,7 @@ import MainLayout from '@layouts/MainLayout';
 // Pages
 import Home from '@pages/Home';
 import About from '@pages/About';
+import Experience from '@pages/Experience';
 import Portfolio from '@pages/Portfolio';
 import Contact from '@pages/Contact';
 
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/" element={<MainLayout />}>
                         <Route index element={<Home />} />
                         <Route path="about" element={<About />} />
+                        <Route path="experience" element={<Experience />} />
                         <Route path="portfolio" element={<Portfolio />} />
                         <Route path="contact" element={<Contact />} />
                     </Route>
