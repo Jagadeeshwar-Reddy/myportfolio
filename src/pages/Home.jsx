@@ -58,7 +58,7 @@ const Home = () => {
     ];
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen" style={{ background: 'var(--gradient-bg)' }}>
             {/* Hero Section */}
             <section className="section relative overflow-hidden">
                 <div className="container">
@@ -75,7 +75,12 @@ const Home = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.2, duration: 0.6 }}
-                                    className="text-green-600 font-semibold text-lg"
+                                    style={{
+                                        color: 'var(--color-primary)',
+                                        fontFamily: 'var(--font-primary)',
+                                        fontWeight: 'var(--font-weight-semibold)',
+                                        fontSize: 'var(--font-size-lg)'
+                                    }}
                                 >
                                     👋 Hello, I'm
                                 </motion.p>
@@ -85,6 +90,7 @@ const Home = () => {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.4, duration: 0.6 }}
                                     className="text-gradient"
+                                    style={{ fontFamily: 'var(--font-display)' }}
                                 >
                                     Jagadeeshwar Reddy
                                 </motion.h1>
@@ -93,7 +99,14 @@ const Home = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.6, duration: 0.6 }}
-                                    className="text-3xl md:text-4xl font-bold text-slate-900"
+                                    style={{
+                                        color: 'var(--color-text-primary)',
+                                        fontFamily: 'var(--font-display)',
+                                        fontWeight: 'var(--font-weight-bold)',
+                                        fontSize: 'var(--font-size-3xl)',
+                                        lineHeight: 'var(--line-height-tight)',
+                                        letterSpacing: 'var(--letter-spacing-tight)'
+                                    }}
                                 >
                                     <TypeWriter words={["Principal iOS Engineer"]} typingSpeed={90} deletingSpeed={40} pauseTime={2500} />
                                 </motion.h2>
@@ -102,7 +115,12 @@ const Home = () => {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: 0.8, duration: 0.6 }}
-                                    className="text-xl text-slate-600 leading-relaxed"
+                                    style={{
+                                        color: 'var(--color-text-secondary)',
+                                        fontFamily: 'var(--font-primary)',
+                                        fontSize: 'var(--font-size-xl)',
+                                        lineHeight: 'var(--line-height-relaxed)'
+                                    }}
                                 >
                                     Crafting exceptional mobile experiences with 13+ years of expertise in Swift, SwiftUI, and enterprise iOS development.
                                 </motion.p>
@@ -153,7 +171,12 @@ const Home = () => {
                                         transition={{ delay: 1.4 + index * 0.1, duration: 0.6 }}
                                         aria-label={link.label}
                                     >
-                                        <span className="text-2xl text-slate-600 group-hover:text-green-600 transition-colors">
+                                        <span
+                                            className="text-2xl transition-colors"
+                                            style={{
+                                                color: 'var(--color-text-secondary)',
+                                            }}
+                                        >
                                             {link.icon}
                                         </span>
                                     </motion.a>
@@ -161,7 +184,7 @@ const Home = () => {
                             </motion.div>
                         </motion.div>
 
-                        {/* Right Content - Clean Design */}
+                        {/* Right Content - Modern Floating Card */}
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -169,28 +192,150 @@ const Home = () => {
                             className="relative"
                         >
                             <div className="relative z-10">
-                                <div className="card text-center">
-                                    <div className="w-64 h-64 mx-auto relative">
-                                        {/* Clean gradient circles */}
-                                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-100 to-emerald-100 animate-pulse"></div>
-                                        <div className="absolute inset-4 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 animate-pulse delay-1000"></div>
-                                        <div className="absolute inset-8 rounded-full bg-gradient-to-r from-blue-100 to-teal-100 animate-pulse delay-2000"></div>
+                                {/* Modern Floating Card */}
+                                <motion.div
+                                    className="relative w-80 h-80 mx-auto"
+                                    animate={{
+                                        y: [0, -10, 0],
+                                        rotateY: [0, 5, 0]
+                                    }}
+                                    transition={{
+                                        duration: 6,
+                                        repeat: Infinity,
+                                        ease: "easeInOut"
+                                    }}
+                                >
+                                    {/* Floating background elements */}
+                                    <motion.div
+                                        className="absolute inset-0 rounded-3xl"
+                                        style={{
+                                            background: 'var(--gradient-primary)',
+                                            opacity: 0.1
+                                        }}
+                                        animate={{
+                                            scale: [1, 1.05, 1],
+                                            rotate: [0, 180, 360]
+                                        }}
+                                        transition={{
+                                            duration: 8,
+                                            repeat: Infinity,
+                                            ease: "linear"
+                                        }}
+                                    />
 
-                                        {/* Center content */}
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <div className="text-center">
-                                                <div className="text-6xl mb-4">📱</div>
-                                                <div className="text-2xl font-bold text-gradient">iOS Developer</div>
-                                                <div className="text-slate-600">13+ Years Experience</div>
-                                            </div>
+                                    <motion.div
+                                        className="absolute inset-4 rounded-3xl"
+                                        style={{
+                                            background: 'var(--gradient-secondary)',
+                                            opacity: 0.15
+                                        }}
+                                        animate={{
+                                            scale: [1, 1.1, 1],
+                                            rotate: [360, 180, 0]
+                                        }}
+                                        transition={{
+                                            duration: 10,
+                                            repeat: Infinity,
+                                            ease: "linear"
+                                        }}
+                                    />
+
+                                    {/* Main card container */}
+                                    <motion.div
+                                        className="absolute inset-8 rounded-3xl backdrop-blur-xl"
+                                        style={{
+                                            background: 'rgba(255, 255, 255, 0.15)',
+                                            border: '1px solid rgba(255, 255, 255, 0.3)',
+                                            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)'
+                                        }}
+                                        whileHover={{
+                                            scale: 1.05,
+                                            boxShadow: '0 35px 60px -12px rgba(0, 0, 0, 0.35)'
+                                        }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        {/* Content */}
+                                        <div className="relative z-10 p-8 text-center">
+                                            <motion.div
+                                                className="text-7xl mb-6"
+                                                animate={{
+                                                    rotate: [0, 10, -10, 0],
+                                                    scale: [1, 1.1, 1]
+                                                }}
+                                                transition={{
+                                                    duration: 4,
+                                                    repeat: Infinity,
+                                                    ease: "easeInOut"
+                                                }}
+                                            >
+                                                📱
+                                            </motion.div>
+
+                                            <motion.div
+                                                style={{
+                                                    fontFamily: 'var(--font-display)',
+                                                    fontWeight: 'var(--font-weight-bold)',
+                                                    fontSize: 'var(--font-size-2xl)',
+                                                    textShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+                                                    background: 'var(--gradient-primary)',
+                                                    WebkitBackgroundClip: 'text',
+                                                    WebkitTextFillColor: 'transparent',
+                                                    backgroundClip: 'text'
+                                                }}
+                                                animate={{
+                                                    opacity: [0.8, 1, 0.8],
+                                                    scale: [0.98, 1, 0.98]
+                                                }}
+                                                transition={{
+                                                    duration: 3,
+                                                    repeat: Infinity,
+                                                    ease: "easeInOut"
+                                                }}
+                                            >
+                                                iOS App Developer
+                                            </motion.div>
                                         </div>
-                                    </div>
-                                </div>
+                                    </motion.div>
+                                </motion.div>
                             </div>
 
-                            {/* Subtle floating elements */}
-                            <div className="absolute top-10 -right-10 w-20 h-20 bg-gradient-to-r from-green-200 to-emerald-200 rounded-full opacity-60 animate-bounce"></div>
-                            <div className="absolute bottom-10 -left-10 w-16 h-16 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full opacity-60 animate-bounce delay-1000"></div>
+                            {/* Enhanced floating elements */}
+                            <motion.div
+                                className="absolute top-8 -right-8 w-24 h-24 rounded-full"
+                                style={{
+                                    background: 'var(--gradient-secondary)',
+                                    opacity: 0.2
+                                }}
+                                animate={{
+                                    y: [0, -20, 0],
+                                    scale: [1, 1.2, 1],
+                                    rotate: [0, 360]
+                                }}
+                                transition={{
+                                    duration: 4,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                            />
+
+                            <motion.div
+                                className="absolute bottom-8 -left-8 w-20 h-20 rounded-full"
+                                style={{
+                                    background: 'var(--gradient-primary)',
+                                    opacity: 0.25
+                                }}
+                                animate={{
+                                    y: [0, 20, 0],
+                                    scale: [1, 0.8, 1],
+                                    rotate: [360, 0]
+                                }}
+                                transition={{
+                                    duration: 5,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                    delay: 1
+                                }}
+                            />
                         </motion.div>
                     </div>
                 </div>
@@ -202,7 +347,7 @@ const Home = () => {
             </section>
 
             {/* Features Section */}
-            <section className="section bg-slate-50">
+            <section className="section" style={{ background: 'var(--color-surface)' }}>
                 <div className="container">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -211,8 +356,21 @@ const Home = () => {
                         viewport={{ once: true }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-gradient mb-4">What I Do</h2>
-                        <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+                        <h2
+                            className="text-gradient mb-4"
+                            style={{ fontFamily: 'var(--font-display)' }}
+                        >
+                            What I Do
+                        </h2>
+                        <p
+                            className="max-w-2xl mx-auto"
+                            style={{
+                                color: 'var(--color-text-secondary)',
+                                fontFamily: 'var(--font-primary)',
+                                fontSize: 'var(--font-size-xl)',
+                                lineHeight: 'var(--line-height-relaxed)'
+                            }}
+                        >
                             Specializing in creating exceptional iOS applications with modern technologies and best practices.
                         </p>
                     </motion.div>
@@ -228,12 +386,35 @@ const Home = () => {
                                 className="card-hover text-center group"
                             >
                                 <div className="mb-6 flex justify-center">
-                                    <div className="p-4 rounded-2xl bg-gradient-to-r from-green-100 to-emerald-100 group-hover:from-green-200 group-hover:to-emerald-200 transition-all duration-300">
+                                    <div
+                                        className="p-4 rounded-2xl transition-all duration-300"
+                                        style={{ background: 'var(--gradient-secondary)' }}
+                                    >
                                         <span className="text-gradient">{feature.icon}</span>
                                     </div>
                                 </div>
-                                <h3 className="text-2xl font-bold text-slate-900 mb-4">{feature.title}</h3>
-                                <p className="text-slate-600 leading-relaxed">{feature.description}</p>
+                                <h3
+                                    className="mb-4"
+                                    style={{
+                                        color: 'var(--color-text-primary)',
+                                        fontFamily: 'var(--font-display)',
+                                        fontWeight: 'var(--font-weight-bold)',
+                                        fontSize: 'var(--font-size-2xl)',
+                                        lineHeight: 'var(--line-height-tight)'
+                                    }}
+                                >
+                                    {feature.title}
+                                </h3>
+                                <p
+                                    style={{
+                                        color: 'var(--color-text-secondary)',
+                                        fontFamily: 'var(--font-primary)',
+                                        fontSize: 'var(--font-size-base)',
+                                        lineHeight: 'var(--line-height-relaxed)'
+                                    }}
+                                >
+                                    {feature.description}
+                                </p>
                             </motion.div>
                         ))}
                     </div>
@@ -241,7 +422,7 @@ const Home = () => {
             </section>
 
             {/* Stats Section */}
-            <section className="section">
+            <section className="section" style={{ background: 'var(--gradient-bg)' }}>
                 <div className="container">
                     <div className="grid md:grid-cols-4 gap-8">
                         {[
@@ -258,8 +439,27 @@ const Home = () => {
                                 viewport={{ once: true }}
                                 className="text-center"
                             >
-                                <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">{stat.number}</div>
-                                <div className="text-slate-600 font-medium">{stat.label}</div>
+                                <div
+                                    className="text-gradient mb-2"
+                                    style={{
+                                        fontFamily: 'var(--font-display)',
+                                        fontWeight: 'var(--font-weight-bold)',
+                                        fontSize: 'var(--font-size-5xl)',
+                                        lineHeight: 'var(--line-height-tight)'
+                                    }}
+                                >
+                                    {stat.number}
+                                </div>
+                                <div
+                                    style={{
+                                        color: 'var(--color-text-secondary)',
+                                        fontFamily: 'var(--font-primary)',
+                                        fontWeight: 'var(--font-weight-medium)',
+                                        fontSize: 'var(--font-size-base)'
+                                    }}
+                                >
+                                    {stat.label}
+                                </div>
                             </motion.div>
                         ))}
                     </div>

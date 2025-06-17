@@ -21,7 +21,7 @@ const ProjectCard = ({ project }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.4 }}
-            className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 hover:border-slate-200"
+            className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 hover:border-green-200"
         >
             {/* Project Image */}
             <div className="relative h-56 overflow-hidden">
@@ -69,25 +69,58 @@ const ProjectCard = ({ project }) => {
             {/* Project Info */}
             <div className="p-6">
                 {/* Title */}
-                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-600 transition-colors duration-300">
+                <h3
+                    className="mb-3 group-hover:text-green-600 transition-colors duration-300"
+                    style={{
+                        color: 'var(--color-text-primary)',
+                        fontFamily: 'var(--font-display)',
+                        fontWeight: 'var(--font-weight-bold)',
+                        fontSize: 'var(--font-size-xl)',
+                        lineHeight: 'var(--line-height-tight)'
+                    }}
+                >
                     {title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-slate-600 mb-4 text-sm leading-relaxed line-clamp-3">
+                <p
+                    className="mb-4 line-clamp-3"
+                    style={{
+                        color: 'var(--color-text-secondary)',
+                        fontFamily: 'var(--font-primary)',
+                        fontSize: 'var(--font-size-sm)',
+                        lineHeight: 'var(--line-height-relaxed)'
+                    }}
+                >
                     {description}
                 </p>
 
                 {/* Project Stats */}
                 {stats && (
-                    <div className="grid grid-cols-2 gap-4 mb-4 p-3 bg-slate-50 rounded-xl">
+                    <div className="grid grid-cols-2 gap-4 mb-4 p-3 bg-green-50 rounded-xl">
                         <div className="flex items-center gap-2 text-slate-700">
                             <FaUsers className="w-4 h-4 text-green-500" />
-                            <span className="text-sm font-medium">{stats.users} Users</span>
+                            <span
+                                style={{
+                                    fontFamily: 'var(--font-primary)',
+                                    fontWeight: 'var(--font-weight-medium)',
+                                    fontSize: 'var(--font-size-sm)'
+                                }}
+                            >
+                                {stats.users} Users
+                            </span>
                         </div>
                         <div className="flex items-center gap-2 text-slate-700">
                             <FaStar className="w-4 h-4 text-yellow-500" />
-                            <span className="text-sm font-medium">{stats.rating} Rating</span>
+                            <span
+                                style={{
+                                    fontFamily: 'var(--font-primary)',
+                                    fontWeight: 'var(--font-weight-medium)',
+                                    fontSize: 'var(--font-size-sm)'
+                                }}
+                            >
+                                {stats.rating} Rating
+                            </span>
                         </div>
                     </div>
                 )}
@@ -97,9 +130,26 @@ const ProjectCard = ({ project }) => {
                     <div className="mb-4">
                         <div className="flex items-center gap-2 text-slate-700 mb-2">
                             <FaChartLine className="w-4 h-4 text-green-500" />
-                            <span className="text-sm font-semibold text-slate-900">Impact</span>
+                            <span
+                                style={{
+                                    color: 'var(--color-text-primary)',
+                                    fontFamily: 'var(--font-primary)',
+                                    fontWeight: 'var(--font-weight-semibold)',
+                                    fontSize: 'var(--font-size-sm)'
+                                }}
+                            >
+                                Impact
+                            </span>
                         </div>
-                        <p className="text-sm text-slate-600 bg-gradient-to-r from-green-50 to-emerald-50 p-3 rounded-xl border border-green-100">
+                        <p
+                            className="bg-gradient-to-r from-green-50 to-emerald-50 p-3 rounded-xl border border-green-100"
+                            style={{
+                                color: 'var(--color-text-secondary)',
+                                fontFamily: 'var(--font-primary)',
+                                fontSize: 'var(--font-size-sm)',
+                                lineHeight: 'var(--line-height-relaxed)'
+                            }}
+                        >
                             {impact}
                         </p>
                     </div>
@@ -111,13 +161,25 @@ const ProjectCard = ({ project }) => {
                         {technologies.slice(0, 4).map((tech) => (
                             <span
                                 key={tech}
-                                className="px-3 py-1.5 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-100 hover:bg-green-100 transition-colors duration-200"
+                                className="px-3 py-1.5 bg-green-50 text-green-700 rounded-full border border-green-100 hover:bg-green-100 transition-colors duration-200"
+                                style={{
+                                    fontFamily: 'var(--font-primary)',
+                                    fontWeight: 'var(--font-weight-medium)',
+                                    fontSize: 'var(--font-size-xs)'
+                                }}
                             >
                                 {tech}
                             </span>
                         ))}
                         {technologies.length > 4 && (
-                            <span className="px-3 py-1.5 bg-slate-50 text-slate-600 rounded-full text-xs font-medium border border-slate-200">
+                            <span
+                                className="px-3 py-1.5 bg-slate-50 text-slate-600 rounded-full border border-slate-200"
+                                style={{
+                                    fontFamily: 'var(--font-primary)',
+                                    fontWeight: 'var(--font-weight-medium)',
+                                    fontSize: 'var(--font-size-xs)'
+                                }}
+                            >
                                 +{technologies.length - 4} more
                             </span>
                         )}
@@ -132,7 +194,12 @@ const ProjectCard = ({ project }) => {
                                 href={githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-slate-600 hover:text-green-600 transition-colors duration-200 text-sm font-medium"
+                                className="flex items-center gap-2 text-slate-600 hover:text-green-600 transition-colors duration-200"
+                                style={{
+                                    fontFamily: 'var(--font-primary)',
+                                    fontWeight: 'var(--font-weight-medium)',
+                                    fontSize: 'var(--font-size-sm)'
+                                }}
                             >
                                 <FaGithub className="w-4 h-4" />
                                 <span>Code</span>
@@ -143,14 +210,28 @@ const ProjectCard = ({ project }) => {
                                 href={demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-slate-600 hover:text-green-600 transition-colors duration-200 text-sm font-medium"
+                                className="flex items-center gap-2 text-slate-600 hover:text-green-600 transition-colors duration-200"
+                                style={{
+                                    fontFamily: 'var(--font-primary)',
+                                    fontWeight: 'var(--font-weight-medium)',
+                                    fontSize: 'var(--font-size-sm)'
+                                }}
                             >
                                 <FaExternalLinkAlt className="w-4 h-4" />
                                 <span>View App</span>
                             </a>
                         )}
                         {(!githubUrl || githubUrl === '#') && (!demoUrl || demoUrl === '#') && (
-                            <span className="text-sm text-slate-500 italic">App Store Project</span>
+                            <span
+                                className="text-slate-500 italic"
+                                style={{
+                                    fontFamily: 'var(--font-primary)',
+                                    fontSize: 'var(--font-size-sm)',
+                                    fontStyle: 'italic'
+                                }}
+                            >
+                                App Store Project
+                            </span>
                         )}
                     </div>
 

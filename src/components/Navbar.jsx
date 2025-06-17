@@ -1,18 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import {
+    Bars3Icon,
+    XMarkIcon,
+    HomeIcon,
+    UserIcon,
+    FolderIcon,
+    EnvelopeIcon
+} from '@heroicons/react/24/outline';
 
 const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/portfolio', label: 'Portfolio' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/', label: 'Home', icon: HomeIcon },
+    { path: '/about', label: 'About', icon: UserIcon },
+    { path: '/portfolio', label: 'Portfolio', icon: FolderIcon },
+    { path: '/contact', label: 'Contact', icon: EnvelopeIcon },
 ];
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
     const menuRef = useRef(null);
 
@@ -35,16 +41,6 @@ const Navbar = () => {
         };
     }, [isOpen]);
 
-    // Handle scroll
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     // Handle escape key
     useEffect(() => {
         const handleEscape = (event) => {
@@ -64,10 +60,7 @@ const Navbar = () => {
 
     return (
         <motion.nav
-            className={`fixed w-full z-50 transition-all duration-500 ${isScrolled
-                ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-slate-200'
-                : 'bg-transparent'
-                }`}
+            className="fixed w-full z-50 transition-all duration-500 bg-white/95 backdrop-blur-xl shadow-lg border-b border-green-200"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
@@ -97,6 +90,7 @@ const Navbar = () => {
                                     key={link.path}
                                     to={link.path}
                                     isActive={location.pathname === link.path}
+                                    icon={link.icon}
                                 >
                                     {link.label}
                                 </NavLink>
@@ -185,6 +179,7 @@ const Navbar = () => {
                                         isActive={location.pathname === link.path}
                                         onClick={() => setIsOpen(false)}
                                         index={index}
+                                        icon={link.icon}
                                     >
                                         {link.label}
                                     </MobileNavLink>
@@ -198,20 +193,21 @@ const Navbar = () => {
     );
 };
 
-const NavLink = ({ to, children, isActive }) => (
+const NavLink = ({ to, children, isActive, icon: Icon }) => (
     <Link
         to={to}
-        className={`nav-link px-4 py-2 rounded-xl font-medium transition-all duration-300 ${isActive
+        className={`nav-link px-4 py-2 rounded-xl font-medium transition-all duration-300 flex items-center gap-2 ${isActive
             ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-md'
             : 'hover:bg-slate-100'
             }`}
         aria-current={isActive ? 'page' : undefined}
     >
+        <Icon className="w-5 h-5" />
         {children}
     </Link>
 );
 
-const MobileNavLink = ({ to, children, isActive, onClick, index }) => (
+const MobileNavLink = ({ to, children, isActive, onClick, index, icon: Icon }) => (
     <motion.div
         variants={{
             closed: { opacity: 0, x: -20 },
@@ -222,12 +218,13 @@ const MobileNavLink = ({ to, children, isActive, onClick, index }) => (
         <Link
             to={to}
             onClick={onClick}
-            className={`block px-4 py-3 rounded-xl font-medium transition-all duration-300 ${isActive
+            className={`block px-4 py-3 rounded-xl font-medium transition-all duration-300 flex items-center gap-3 ${isActive
                 ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
                 : 'text-slate-700 hover:text-slate-900 hover:bg-slate-50'
                 }`}
             aria-current={isActive ? 'page' : undefined}
         >
+            <Icon className="w-5 h-5" />
             {children}
         </Link>
     </motion.div>

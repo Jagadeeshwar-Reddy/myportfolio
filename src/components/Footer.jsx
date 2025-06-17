@@ -29,7 +29,13 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-slate-50 border-t border-slate-200">
+        <footer
+            className="border-t"
+            style={{
+                background: 'var(--color-surface)',
+                borderColor: 'var(--color-border)'
+            }}
+        >
             <div className="container mx-auto px-4 py-16">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12">
@@ -42,8 +48,8 @@ const Footer = () => {
                             viewport={{ once: true }}
                         >
                             <h3 className="text-2xl font-bold text-gradient">About Me</h3>
-                            <p className="text-slate-600 leading-relaxed text-lg">
-                                Senior iOS Developer with 13+ years of experience in building
+                            <p className="leading-relaxed text-lg" style={{ color: 'var(--color-text-secondary)' }}>
+                                Principal iOS Engineer with 13+ years of experience in building
                                 enterprise-grade applications. Specializing in Swift, SwiftUI,
                                 and iOS development, with a focus on creating scalable and
                                 secure solutions that drive business growth.
@@ -75,7 +81,10 @@ const Footer = () => {
                                         viewport={{ once: true }}
                                         aria-label={link.label}
                                     >
-                                        <span className="text-2xl text-slate-600 group-hover:text-green-600 transition-colors">
+                                        <span
+                                            className="text-2xl transition-colors"
+                                            style={{ color: 'var(--color-text-secondary)' }}
+                                        >
                                             {link.icon}
                                         </span>
                                     </motion.a>
@@ -86,16 +95,17 @@ const Footer = () => {
 
                     {/* Copyright */}
                     <motion.div
-                        className="mt-16 pt-8 border-t border-slate-300 text-center"
+                        className="mt-16 pt-8 border-t text-center"
+                        style={{ borderColor: 'var(--color-border)' }}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
                         viewport={{ once: true }}
                     >
-                        <p className="text-slate-600 text-lg">
+                        <p className="text-lg" style={{ color: 'var(--color-text-secondary)' }}>
                             &copy; {currentYear} Jagadeeshwar Reddy. All rights reserved.
                         </p>
-                        <p className="text-slate-500 mt-2">
+                        <p className="mt-2" style={{ color: 'var(--color-text-muted)' }}>
                             Thanks for visiting!
                         </p>
                     </motion.div>

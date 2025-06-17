@@ -210,61 +210,134 @@ const Portfolio = () => {
     };
 
     return (
-        <section id="portfolio" className="py-20 bg-gray-50">
-            <div className="container mx-auto px-4">
-                <motion.div
-                    ref={ref}
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate={inView ? 'visible' : 'hidden'}
-                    className="max-w-7xl mx-auto"
-                >
-                    {/* Section Title */}
-                    <motion.h2
-                        className="text-4xl font-bold text-center text-gray-900 mb-12"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                    >
-                        My Portfolio
-                    </motion.h2>
-
-                    {/* Filter Buttons */}
+        <div className="min-h-screen" style={{ background: 'var(--gradient-bg)' }}>
+            {/* Hero Section */}
+            <section className="section relative overflow-hidden">
+                <div className="container">
                     <motion.div
-                        className="flex flex-wrap justify-center gap-4 mb-12"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
+                        ref={ref}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={inView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.8 }}
+                        className="text-center mb-16"
+                    >
+                        <h1
+                            className="text-gradient mb-6"
+                            style={{
+                                fontFamily: 'var(--font-display)',
+                                fontWeight: 'var(--font-weight-bold)',
+                                fontSize: 'var(--font-size-6xl)',
+                                lineHeight: 'var(--line-height-tight)',
+                                letterSpacing: 'var(--letter-spacing-tight)'
+                            }}
+                        >
+                            My Portfolio
+                        </h1>
+                        <p
+                            className="max-w-3xl mx-auto"
+                            style={{
+                                color: 'var(--color-text-secondary)',
+                                fontFamily: 'var(--font-primary)',
+                                fontSize: 'var(--font-size-xl)',
+                                lineHeight: 'var(--line-height-relaxed)'
+                            }}
+                        >
+                            A collection of iOS applications I've developed, showcasing expertise in Swift, SwiftUI, and enterprise mobile solutions across various industries.
+                        </p>
+                    </motion.div>
+
+                    {/* Category Filter */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={inView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="flex flex-wrap justify-center gap-3 mb-12"
                     >
                         {categories.map((category) => (
-                            <motion.button
+                            <button
                                 key={category.id}
                                 onClick={() => setSelectedCategory(category.id)}
-                                className={`px-6 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${selectedCategory === category.id
-                                    ? 'bg-blue-600 text-white'
-                                    : 'bg-white text-gray-600 hover:bg-gray-100'
+                                className={`px-6 py-3 rounded-xl transition-all duration-300 ${selectedCategory === category.id
+                                    ? 'text-white shadow-lg'
+                                    : 'hover:shadow-md'
                                     }`}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
+                                style={{
+                                    background: selectedCategory === category.id
+                                        ? 'var(--gradient-primary)'
+                                        : 'var(--color-surface-card)',
+                                    color: selectedCategory === category.id
+                                        ? 'var(--color-text-inverse)'
+                                        : 'var(--color-text-secondary)',
+                                    border: selectedCategory === category.id
+                                        ? 'none'
+                                        : '1px solid var(--color-border)',
+                                    fontFamily: 'var(--font-primary)',
+                                    fontWeight: 'var(--font-weight-semibold)',
+                                    fontSize: 'var(--font-size-base)'
+                                }}
                             >
                                 {category.name}
-                            </motion.button>
+                            </button>
                         ))}
                     </motion.div>
 
                     {/* Projects Grid */}
-                    <motion.div
-                        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-                        variants={containerVariants}
-                    >
-                        <AnimatePresence mode="wait">
-                            {filteredProjects.map((project) => (
-                                <ProjectCard key={project.title} project={project} />
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={selectedCategory}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.5 }}
+                            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        >
+                            {filteredProjects.map((project, index) => (
+                                <motion.div
+                                    key={project.title}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <ProjectCard project={project} />
+                                </motion.div>
                             ))}
-                        </AnimatePresence>
-                    </motion.div>
-                </motion.div>
-            </div>
-        </section>
+                        </motion.div>
+                    </AnimatePresence>
+
+                    {/* Empty State */}
+                    {filteredProjects.length === 0 && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            className="text-center py-16"
+                        >
+                            <div className="text-6xl mb-4">🔍</div>
+                            <h3
+                                className="mb-2"
+                                style={{
+                                    color: 'var(--color-text-primary)',
+                                    fontFamily: 'var(--font-display)',
+                                    fontWeight: 'var(--font-weight-bold)',
+                                    fontSize: 'var(--font-size-2xl)',
+                                    lineHeight: 'var(--line-height-tight)'
+                                }}
+                            >
+                                No projects found
+                            </h3>
+                            <p style={{
+                                color: 'var(--color-text-secondary)',
+                                fontFamily: 'var(--font-primary)',
+                                fontSize: 'var(--font-size-base)',
+                                lineHeight: 'var(--line-height-relaxed)'
+                            }}>
+                                Try selecting a different category to see more projects.
+                            </p>
+                        </motion.div>
+                    )}
+                </div>
+            </section>
+        </div>
     );
 };
 

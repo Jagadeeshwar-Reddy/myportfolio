@@ -82,7 +82,7 @@ const Experience = () => {
     const chronologicalExperiences = experiences;
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
+        <div className="min-h-screen" style={{ background: 'var(--gradient-bg)' }}>
             {/* Timeline Section */}
             <section className="section relative overflow-hidden">
                 <div className="container">
@@ -92,18 +92,44 @@ const Experience = () => {
                         transition={{ duration: 0.8 }}
                         className="text-center mb-20"
                     >
-                        <h1 className="text-gradient mb-6 text-5xl md:text-6xl font-bold">Professional Journey</h1>
+                        <h1
+                            className="text-gradient mb-6"
+                            style={{
+                                fontFamily: 'var(--font-display)',
+                                fontWeight: 'var(--font-weight-bold)',
+                                fontSize: 'var(--font-size-6xl)',
+                                lineHeight: 'var(--line-height-tight)',
+                                letterSpacing: 'var(--letter-spacing-tight)'
+                            }}
+                        >
+                            Professional Journey
+                        </h1>
                     </motion.div>
 
                     {/* Timeline */}
                     <div className="relative">
                         {/* Central Timeline Line */}
-                        <div className="absolute left-[80%] transform -translate-x-1/2 w-1 bg-green-500 hidden lg:block"
-                            style={{ top: '50px', bottom: '50px', height: 'auto' }}></div>
+                        <div
+                            className="absolute left-[80%] transform -translate-x-1/2 w-1 hidden lg:block"
+                            style={{
+                                top: '50px',
+                                bottom: '50px',
+                                height: 'auto',
+                                background: 'var(--color-primary)'
+                            }}
+                        ></div>
 
                         {/* Present Badge at Top */}
                         <div className="absolute left-[80%] -translate-x-1/2 top-0 z-20">
-                            <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg flex items-center space-x-2">
+                            <div
+                                className="text-white px-8 py-3 rounded-full shadow-lg flex items-center space-x-2"
+                                style={{
+                                    background: 'var(--gradient-primary)',
+                                    fontFamily: 'var(--font-primary)',
+                                    fontWeight: 'var(--font-weight-bold)',
+                                    fontSize: 'var(--font-size-lg)'
+                                }}
+                            >
                                 <FaBriefcase className="w-5 h-5" />
                                 <span>Present</span>
                             </div>
@@ -124,12 +150,28 @@ const Experience = () => {
                                     <div className="w-full lg:w-4/5 lg:pr-24">
                                         <motion.div
                                             whileHover={{ y: -5 }}
-                                            className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-100 hover:border-slate-200 overflow-hidden group p-6 md:p-8"
+                                            className="rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group p-6 md:p-8"
+                                            style={{
+                                                background: 'var(--color-surface-card)',
+                                                border: '1px solid var(--color-border)'
+                                            }}
                                         >
                                             {/* Card Header */}
-                                            <div className="bg-gradient-to-r from-slate-50 to-white p-8 border-b border-slate-100 mb-6">
+                                            <div
+                                                className="p-8 border-b mb-6"
+                                                style={{
+                                                    background: 'var(--color-surface-light)',
+                                                    borderColor: 'var(--color-border)'
+                                                }}
+                                            >
                                                 <div className="flex items-center space-x-6">
-                                                    <div className="w-20 h-20 flex items-center justify-center bg-white rounded-2xl shadow-md border border-slate-200 p-3 group-hover:shadow-lg transition-all duration-300">
+                                                    <div
+                                                        className="w-20 h-20 flex items-center justify-center rounded-2xl shadow-md border p-3 group-hover:shadow-lg transition-all duration-300"
+                                                        style={{
+                                                            background: 'var(--color-surface-card)',
+                                                            borderColor: 'var(--color-border)'
+                                                        }}
+                                                    >
                                                         <img
                                                             src={exp.logo}
                                                             alt={`${exp.company} logo`}
@@ -140,26 +182,53 @@ const Experience = () => {
                                                             }}
                                                         />
                                                         <div
-                                                            className="text-2xl text-slate-400 hidden"
-                                                            style={{ display: 'none' }}
+                                                            className="text-2xl hidden"
+                                                            style={{
+                                                                display: 'none',
+                                                                color: 'var(--color-text-muted)'
+                                                            }}
                                                         >
                                                             🏢
                                                         </div>
                                                     </div>
                                                     <div className="flex-1">
-                                                        <h3 className="text-2xl font-bold text-slate-900 mb-1 group-hover:text-green-600 transition-colors duration-300">
+                                                        <h3
+                                                            className="mb-1 group-hover:transition-colors duration-300"
+                                                            style={{
+                                                                color: 'var(--color-text-primary)',
+                                                                fontFamily: 'var(--font-display)',
+                                                                fontWeight: 'var(--font-weight-bold)',
+                                                                fontSize: 'var(--font-size-2xl)',
+                                                                lineHeight: 'var(--line-height-tight)'
+                                                            }}
+                                                        >
                                                             {exp.position}
                                                         </h3>
-                                                        <p className="text-lg text-green-600 font-semibold mb-2">
+                                                        <p
+                                                            className="mb-2"
+                                                            style={{
+                                                                color: 'var(--color-primary)',
+                                                                fontFamily: 'var(--font-primary)',
+                                                                fontWeight: 'var(--font-weight-semibold)',
+                                                                fontSize: 'var(--font-size-lg)'
+                                                            }}
+                                                        >
                                                             {exp.company}
                                                         </p>
-                                                        <div className="flex items-center space-x-4 text-sm text-slate-600">
+                                                        <div
+                                                            className="flex items-center space-x-4"
+                                                            style={{
+                                                                color: 'var(--color-text-secondary)',
+                                                                fontFamily: 'var(--font-primary)',
+                                                                fontSize: 'var(--font-size-sm)'
+                                                            }}
+                                                        >
                                                             <div className="flex items-center space-x-1">
-                                                                <FaCalendarAlt className="text-green-500 w-3 h-3" />
+                                                                <FaCalendarAlt className="w-3 h-3" style={{ color: 'var(--color-primary)' }} />
                                                                 <span>{exp.duration}</span>
                                                             </div>
                                                             <div className="flex items-center space-x-1">
-                                                                <FaMapMarkerAlt className="text-green-500 w-3 h-3" />
+                                                                <FaMapMarkerAlt className="w-3 h-3" style={{ color: 'var(--color-primary)' }} />
                                                                 <span>{exp.location}</span>
                                                             </div>
                                                         </div>
@@ -168,11 +237,31 @@ const Experience = () => {
                                             </div>
                                             {/* Key Impact Highlight */}
                                             <div className="mb-6">
-                                                <div className="flex items-center gap-2 text-slate-700 mb-2">
-                                                    <FaRocket className="w-5 h-5 text-green-500" />
-                                                    <span className="text-base font-semibold text-slate-900">Key Impact</span>
+                                                <div className="flex items-center gap-2 mb-2" style={{ color: 'var(--color-text-secondary)' }}>
+                                                    <FaRocket className="w-5 h-5" style={{ color: 'var(--color-primary)' }} />
+                                                    <span
+                                                        style={{
+                                                            color: 'var(--color-text-primary)',
+                                                            fontFamily: 'var(--font-primary)',
+                                                            fontWeight: 'var(--font-weight-semibold)',
+                                                            fontSize: 'var(--font-size-base)'
+                                                        }}
+                                                    >
+                                                        Key Impact
+                                                    </span>
                                                 </div>
-                                                <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-4 rounded-xl border border-green-100 text-slate-700 font-medium text-sm">
+                                                <div
+                                                    className="p-4 rounded-xl border"
+                                                    style={{
+                                                        background: 'var(--color-surface-light)',
+                                                        borderColor: 'var(--color-border)',
+                                                        color: 'var(--color-text-secondary)',
+                                                        fontFamily: 'var(--font-primary)',
+                                                        fontWeight: 'var(--font-weight-medium)',
+                                                        fontSize: 'var(--font-size-sm)',
+                                                        lineHeight: 'var(--line-height-relaxed)'
+                                                    }}
+                                                >
                                                     {exp.achievements[0]}
                                                 </div>
                                             </div>
@@ -181,14 +270,33 @@ const Experience = () => {
                                                 {/* Responsibilities */}
                                                 <div className="flex-1">
                                                     <div className="flex items-center gap-2 mb-3">
-                                                        <FaUsers className="text-green-500 w-5 h-5" />
-                                                        <h4 className="text-lg font-bold text-slate-900">Key Responsibilities</h4>
+                                                        <FaUsers className="w-5 h-5" style={{ color: 'var(--color-primary)' }} />
+                                                        <h4
+                                                            style={{
+                                                                color: 'var(--color-text-primary)',
+                                                                fontFamily: 'var(--font-display)',
+                                                                fontWeight: 'var(--font-weight-bold)',
+                                                                fontSize: 'var(--font-size-lg)',
+                                                                lineHeight: 'var(--line-height-tight)'
+                                                            }}
+                                                        >
+                                                            Key Responsibilities
+                                                        </h4>
                                                     </div>
                                                     <ul className="space-y-3">
                                                         {exp.responsibilities.map((resp, idx) => (
                                                             <li key={idx} className="flex items-start gap-2">
-                                                                <FaCheckCircle className="text-green-400 mt-1 w-4 h-4 flex-shrink-0" />
-                                                                <span className="text-sm text-slate-700">{resp}</span>
+                                                                <FaCheckCircle className="mt-1 w-4 h-4 flex-shrink-0" style={{ color: 'var(--color-primary-light)' }} />
+                                                                <span
+                                                                    style={{
+                                                                        color: 'var(--color-text-secondary)',
+                                                                        fontFamily: 'var(--font-primary)',
+                                                                        fontSize: 'var(--font-size-sm)',
+                                                                        lineHeight: 'var(--line-height-relaxed)'
+                                                                    }}
+                                                                >
+                                                                    {resp}
+                                                                </span>
                                                             </li>
                                                         ))}
                                                     </ul>
@@ -198,14 +306,33 @@ const Experience = () => {
                                                     {/* Achievements */}
                                                     <div>
                                                         <div className="flex items-center gap-2 mb-3">
-                                                            <FaStar className="text-yellow-500 w-5 h-5" />
-                                                            <h4 className="text-lg font-bold text-slate-900">Achievements</h4>
+                                                            <FaStar className="w-5 h-5" style={{ color: 'var(--color-accent)' }} />
+                                                            <h4
+                                                                style={{
+                                                                    color: 'var(--color-text-primary)',
+                                                                    fontFamily: 'var(--font-display)',
+                                                                    fontWeight: 'var(--font-weight-bold)',
+                                                                    fontSize: 'var(--font-size-lg)',
+                                                                    lineHeight: 'var(--line-height-tight)'
+                                                                }}
+                                                            >
+                                                                Achievements
+                                                            </h4>
                                                         </div>
                                                         <ul className="space-y-3">
                                                             {exp.achievements.map((ach, idx) => (
                                                                 <li key={idx} className="flex items-start gap-2">
-                                                                    <FaCheckCircle className="text-yellow-400 mt-1 w-4 h-4 flex-shrink-0" />
-                                                                    <span className="text-sm text-slate-700">{ach}</span>
+                                                                    <FaCheckCircle className="mt-1 w-4 h-4 flex-shrink-0" style={{ color: 'var(--color-accent)' }} />
+                                                                    <span
+                                                                        style={{
+                                                                            color: 'var(--color-text-secondary)',
+                                                                            fontFamily: 'var(--font-primary)',
+                                                                            fontSize: 'var(--font-size-sm)',
+                                                                            lineHeight: 'var(--line-height-relaxed)'
+                                                                        }}
+                                                                    >
+                                                                        {ach}
+                                                                    </span>
                                                                 </li>
                                                             ))}
                                                         </ul>
@@ -213,16 +340,34 @@ const Experience = () => {
                                                     {/* Tech Stack */}
                                                     <div>
                                                         <div className="flex items-center gap-2 mb-3">
-                                                            <FaCode className="text-green-500 w-5 h-5" />
-                                                            <h4 className="text-lg font-bold text-slate-900">Technologies</h4>
+                                                            <FaCode className="w-5 h-5" style={{ color: 'var(--color-primary)' }} />
+                                                            <h4
+                                                                style={{
+                                                                    color: 'var(--color-text-primary)',
+                                                                    fontFamily: 'var(--font-display)',
+                                                                    fontWeight: 'var(--font-weight-bold)',
+                                                                    fontSize: 'var(--font-size-lg)',
+                                                                    lineHeight: 'var(--line-height-tight)'
+                                                                }}
+                                                            >
+                                                                Technologies
+                                                            </h4>
                                                         </div>
                                                         <div className="flex flex-wrap gap-2">
                                                             {exp.technologies.map((tech, idx) => (
                                                                 <span
                                                                     key={idx}
-                                                                    className="px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-medium border border-green-100 flex items-center gap-1"
+                                                                    className="px-3 py-1 rounded-full border flex items-center gap-1"
+                                                                    style={{
+                                                                        background: 'var(--color-surface-light)',
+                                                                        color: 'var(--color-primary)',
+                                                                        borderColor: 'var(--color-border)',
+                                                                        fontFamily: 'var(--font-primary)',
+                                                                        fontWeight: 'var(--font-weight-medium)',
+                                                                        fontSize: 'var(--font-size-xs)'
+                                                                    }}
                                                                 >
-                                                                    <FaCode className="w-3 h-3 text-green-400" /> {tech}
+                                                                    <FaCode className="w-3 h-3" style={{ color: 'var(--color-primary-light)' }} /> {tech}
                                                                 </span>
                                                             ))}
                                                         </div>
@@ -230,8 +375,8 @@ const Experience = () => {
                                                 </div>
                                             </div>
                                             {/* Description at the bottom */}
-                                            <div className="mt-8 border-t border-slate-100 pt-6">
-                                                <p className="text-slate-600 leading-relaxed text-base">
+                                            <div className="mt-8 border-t pt-6" style={{ borderColor: 'var(--color-border)' }}>
+                                                <p className="leading-relaxed text-base" style={{ color: 'var(--color-text-secondary)' }}>
                                                     {exp.description}
                                                 </p>
                                             </div>
@@ -239,14 +384,26 @@ const Experience = () => {
                                     </div>
 
                                     {/* Timeline Dot */}
-                                    <div className="absolute left-[80%] transform -translate-x-1/2 w-6 h-6 bg-green-500 rounded-full border-4 border-white shadow-lg z-10 hidden lg:block">
-                                        <div className="w-full h-full bg-green-500 rounded-full animate-pulse"></div>
+                                    <div
+                                        className="absolute left-[80%] transform -translate-x-1/2 w-6 h-6 rounded-full border-4 shadow-lg z-10 hidden lg:block"
+                                        style={{
+                                            background: 'var(--color-primary)',
+                                            borderColor: 'var(--color-surface-card)'
+                                        }}
+                                    >
+                                        <div
+                                            className="w-full h-full rounded-full animate-pulse"
+                                            style={{ background: 'var(--color-primary)' }}
+                                        ></div>
                                     </div>
 
                                     {/* Year Badge */}
                                     {index === 1 && (
                                         <div className="absolute left-[80%] transform -translate-x-1/2 -translate-y-1/2 top-0 mb-6">
-                                            <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg">
+                                            <div
+                                                className="text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg"
+                                                style={{ background: 'var(--gradient-primary)' }}
+                                            >
                                                 2015
                                             </div>
                                         </div>
@@ -257,7 +414,10 @@ const Experience = () => {
 
                         {/* Timeline End Point */}
                         <div className="absolute left-[80%] -translate-x-1/2 bottom-0 z-20">
-                            <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg flex items-center">
+                            <div
+                                className="text-white px-8 py-3 rounded-full text-lg font-bold shadow-lg flex items-center"
+                                style={{ background: 'var(--gradient-primary)' }}
+                            >
                                 <span>2011</span>
                             </div>
                         </div>

@@ -78,12 +78,21 @@ const ContactForm = () => {
     };
 
     const inputClasses = (error) =>
-        `w-full px-4 py-3 rounded-lg border ${error ? 'border-red-500' : 'border-gray-300'
-        } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200`;
+        `w-full px-4 py-3 rounded-lg border transition-colors duration-200 ${error ? 'border-red-500' : ''
+        }`;
 
     return (
-        <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+        <div className="card p-8">
+            <h3
+                className="mb-6"
+                style={{
+                    color: 'var(--color-text-primary)',
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 'var(--font-weight-semibold)',
+                    fontSize: 'var(--font-size-2xl)',
+                    lineHeight: 'var(--line-height-tight)'
+                }}
+            >
                 Send Me a Message
             </h3>
 
@@ -91,7 +100,8 @@ const ContactForm = () => {
                 <div>
                     <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-medium mb-1"
+                        style={{ color: 'var(--color-text-primary)' }}
                     >
                         Name
                     </label>
@@ -103,16 +113,22 @@ const ContactForm = () => {
                         onChange={handleChange}
                         className={inputClasses(errors.name)}
                         placeholder="Your name"
+                        style={{
+                            background: 'var(--color-surface-card)',
+                            borderColor: errors.name ? 'var(--color-error)' : 'var(--color-border)',
+                            color: 'var(--color-text-primary)'
+                        }}
                     />
                     {errors.name && (
-                        <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                        <p className="mt-1 text-sm" style={{ color: 'var(--color-error)' }}>{errors.name}</p>
                     )}
                 </div>
 
                 <div>
                     <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-medium mb-1"
+                        style={{ color: 'var(--color-text-primary)' }}
                     >
                         Email
                     </label>
@@ -124,16 +140,22 @@ const ContactForm = () => {
                         onChange={handleChange}
                         className={inputClasses(errors.email)}
                         placeholder="your.email@example.com"
+                        style={{
+                            background: 'var(--color-surface-card)',
+                            borderColor: errors.email ? 'var(--color-error)' : 'var(--color-border)',
+                            color: 'var(--color-text-primary)'
+                        }}
                     />
                     {errors.email && (
-                        <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                        <p className="mt-1 text-sm" style={{ color: 'var(--color-error)' }}>{errors.email}</p>
                     )}
                 </div>
 
                 <div>
                     <label
                         htmlFor="subject"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-medium mb-1"
+                        style={{ color: 'var(--color-text-primary)' }}
                     >
                         Subject
                     </label>
@@ -145,16 +167,22 @@ const ContactForm = () => {
                         onChange={handleChange}
                         className={inputClasses(errors.subject)}
                         placeholder="Message subject"
+                        style={{
+                            background: 'var(--color-surface-card)',
+                            borderColor: errors.subject ? 'var(--color-error)' : 'var(--color-border)',
+                            color: 'var(--color-text-primary)'
+                        }}
                     />
                     {errors.subject && (
-                        <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
+                        <p className="mt-1 text-sm" style={{ color: 'var(--color-error)' }}>{errors.subject}</p>
                     )}
                 </div>
 
                 <div>
                     <label
                         htmlFor="message"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-medium mb-1"
+                        style={{ color: 'var(--color-text-primary)' }}
                     >
                         Message
                     </label>
@@ -166,19 +194,26 @@ const ContactForm = () => {
                         rows="5"
                         className={inputClasses(errors.message)}
                         placeholder="Your message..."
+                        style={{
+                            background: 'var(--color-surface-card)',
+                            borderColor: errors.message ? 'var(--color-error)' : 'var(--color-border)',
+                            color: 'var(--color-text-primary)'
+                        }}
                     />
                     {errors.message && (
-                        <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                        <p className="mt-1 text-sm" style={{ color: 'var(--color-error)' }}>{errors.message}</p>
                     )}
                 </div>
 
                 <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-white font-medium ${isSubmitting
-                        ? 'bg-blue-400 cursor-not-allowed'
-                        : 'bg-blue-600 hover:bg-blue-700'
-                        } transition-colors duration-200`}
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+                    style={{
+                        background: isSubmitting ? 'var(--color-text-muted)' : 'var(--gradient-primary)',
+                        color: 'var(--color-text-inverse)',
+                        cursor: isSubmitting ? 'not-allowed' : 'pointer'
+                    }}
                     whileHover={!isSubmitting ? { scale: 1.02 } : {}}
                     whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                 >
@@ -196,7 +231,8 @@ const ContactForm = () => {
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-green-600 text-center"
+                        className="text-center"
+                        style={{ color: 'var(--color-success)' }}
                     >
                         Message sent successfully! I'll get back to you soon.
                     </motion.p>
@@ -206,9 +242,10 @@ const ContactForm = () => {
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-red-600 text-center"
+                        className="text-center"
+                        style={{ color: 'var(--color-error)' }}
                     >
-                        Failed to send message. Please try again later.
+                        Something went wrong. Please try again.
                     </motion.p>
                 )}
             </form>

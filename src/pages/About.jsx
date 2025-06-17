@@ -51,117 +51,168 @@ const About = () => {
         },
     ];
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-            },
-        },
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
-    };
-
     return (
-        <section id="about" className="py-20 bg-gray-50">
-            <div className="container mx-auto px-4">
-                <motion.div
-                    ref={ref}
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate={inView ? 'visible' : 'hidden'}
-                    className="max-w-6xl mx-auto"
-                >
-                    {/* Section Title */}
-                    <motion.h2
-                        className="text-4xl font-bold text-center text-gray-900 mb-12"
-                        variants={itemVariants}
-                    >
-                        About Me
-                    </motion.h2>
-
-                    {/* About Content */}
-                    <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-                        {/* About Text */}
-                        <motion.div variants={itemVariants}>
-                            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                                Senior iOS Developer
-                            </h3>
-                            <p className="text-gray-600 mb-4">
-                                I am a Senior iOS Developer with 13+ years of experience in building
-                                enterprise-grade applications. My expertise lies in developing
-                                scalable and secure iOS applications for diverse industries including
-                                e-commerce, real estate, and healthcare.
-                            </p>
-                            <p className="text-gray-600 mb-4">
-                                Throughout my career, I have successfully delivered numerous
-                                high-impact projects, mentored development teams, and driven
-                                technical innovation. I specialize in Swift, SwiftUI, and UIKit,
-                                with a strong focus on creating intuitive user interfaces and
-                                robust backend integrations.
-                            </p>
-                            <p className="text-gray-600">
-                                I am passionate about staying current with the latest iOS
-                                development trends and best practices, ensuring that the
-                                applications I build are not only technically sound but also
-                                provide exceptional user experiences.
-                            </p>
-                        </motion.div>
-
-                        {/* Skills Grid */}
-                        <motion.div
-                            className="grid gap-6"
-                            variants={containerVariants}
-                        >
-                            {skills.map((category, index) => (
-                                <SkillCard
-                                    key={category.category}
-                                    category={category.category}
-                                    skills={category.skills}
-                                    delay={index * 0.2}
-                                />
-                            ))}
-                        </motion.div>
-                    </div>
-
-                    {/* Additional Info */}
+        <div className="min-h-screen" style={{ background: 'var(--gradient-bg)' }}>
+            <section className="section relative overflow-hidden">
+                <div className="container">
                     <motion.div
-                        className="grid md:grid-cols-3 gap-8"
-                        variants={containerVariants}
+                        ref={ref}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={inView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.8 }}
+                        className="max-w-6xl mx-auto"
                     >
-                        <InfoCard
-                            title="Experience"
-                            content="13+ Years in iOS Development"
-                            variants={itemVariants}
-                        />
-                        <InfoCard
-                            title="Education"
-                            content="B.Tech in Computer Science"
-                            variants={itemVariants}
-                        />
-                        <InfoCard
-                            title="Location"
-                            content="Hyderabad, India"
-                            variants={itemVariants}
-                        />
+                        {/* Section Title */}
+                        <motion.h2
+                            className="text-gradient mb-12 text-center"
+                            style={{
+                                fontFamily: 'var(--font-display)',
+                                fontWeight: 'var(--font-weight-bold)',
+                                fontSize: 'var(--font-size-5xl)',
+                                lineHeight: 'var(--line-height-tight)',
+                                letterSpacing: 'var(--letter-spacing-tight)'
+                            }}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={inView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                        >
+                            About Me
+                        </motion.h2>
+
+                        {/* About Content */}
+                        <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+                            {/* About Text */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                animate={inView ? { opacity: 1, x: 0 } : {}}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                            >
+                                <h3
+                                    className="mb-4"
+                                    style={{
+                                        color: 'var(--color-text-primary)',
+                                        fontFamily: 'var(--font-display)',
+                                        fontWeight: 'var(--font-weight-semibold)',
+                                        fontSize: 'var(--font-size-2xl)',
+                                        lineHeight: 'var(--line-height-tight)'
+                                    }}
+                                >
+                                    Principal iOS Engineer
+                                </h3>
+                                <p
+                                    className="mb-4"
+                                    style={{
+                                        color: 'var(--color-text-secondary)',
+                                        fontFamily: 'var(--font-primary)',
+                                        fontSize: 'var(--font-size-base)',
+                                        lineHeight: 'var(--line-height-relaxed)'
+                                    }}
+                                >
+                                    I am a Principal iOS Engineer with 13+ years of experience in building
+                                    enterprise-grade applications. My expertise lies in developing
+                                    scalable and secure iOS applications for diverse industries including
+                                    e-commerce, real estate, and healthcare.
+                                </p>
+                                <p
+                                    className="mb-4"
+                                    style={{
+                                        color: 'var(--color-text-secondary)',
+                                        fontFamily: 'var(--font-primary)',
+                                        fontSize: 'var(--font-size-base)',
+                                        lineHeight: 'var(--line-height-relaxed)'
+                                    }}
+                                >
+                                    Throughout my career, I have successfully delivered numerous
+                                    high-impact projects, mentored development teams, and driven
+                                    technical innovation. I specialize in Swift, SwiftUI, and UIKit,
+                                    with a strong focus on creating intuitive user interfaces and
+                                    robust backend integrations.
+                                </p>
+                                <p
+                                    style={{
+                                        color: 'var(--color-text-secondary)',
+                                        fontFamily: 'var(--font-primary)',
+                                        fontSize: 'var(--font-size-base)',
+                                        lineHeight: 'var(--line-height-relaxed)'
+                                    }}
+                                >
+                                    I am passionate about staying current with the latest iOS
+                                    development trends and best practices, ensuring that the
+                                    applications I build are not only technically sound but also
+                                    provide exceptional user experiences.
+                                </p>
+                            </motion.div>
+
+                            {/* Skills Grid */}
+                            <motion.div
+                                className="grid gap-6"
+                                initial={{ opacity: 0, x: 30 }}
+                                animate={inView ? { opacity: 1, x: 0 } : {}}
+                                transition={{ duration: 0.6, delay: 0.6 }}
+                            >
+                                {skills.map((category, index) => (
+                                    <SkillCard
+                                        key={category.category}
+                                        category={category.category}
+                                        skills={category.skills}
+                                        delay={index * 0.2}
+                                    />
+                                ))}
+                            </motion.div>
+                        </div>
+
+                        {/* Additional Info */}
+                        <motion.div
+                            className="grid md:grid-cols-3 gap-8"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={inView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ duration: 0.6, delay: 0.8 }}
+                        >
+                            <InfoCard
+                                title="Experience"
+                                content="13+ Years in iOS Development"
+                            />
+                            <InfoCard
+                                title="Education"
+                                content="B.Tech in Computer Science"
+                            />
+                            <InfoCard
+                                title="Location"
+                                content="Hyderabad, India"
+                            />
+                        </motion.div>
                     </motion.div>
-                </motion.div>
-            </div>
-        </section>
+                </div>
+            </section>
+        </div>
     );
 };
 
-const InfoCard = ({ title, content, variants }) => (
+const InfoCard = ({ title, content }) => (
     <motion.div
-        variants={variants}
-        className="bg-white p-6 rounded-lg shadow-md text-center"
+        whileHover={{ y: -5 }}
+        className="card text-center p-6"
     >
-        <h4 className="text-lg font-semibold text-gray-900 mb-2">{title}</h4>
-        <p className="text-gray-600">{content}</p>
+        <h4
+            className="mb-2"
+            style={{
+                color: 'var(--color-text-primary)',
+                fontFamily: 'var(--font-display)',
+                fontWeight: 'var(--font-weight-semibold)',
+                fontSize: 'var(--font-size-lg)',
+                lineHeight: 'var(--line-height-tight)'
+            }}
+        >
+            {title}
+        </h4>
+        <p style={{
+            color: 'var(--color-text-secondary)',
+            fontFamily: 'var(--font-primary)',
+            fontSize: 'var(--font-size-base)',
+            lineHeight: 'var(--line-height-relaxed)'
+        }}>
+            {content}
+        </p>
     </motion.div>
 );
 
