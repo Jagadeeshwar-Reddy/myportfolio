@@ -28,11 +28,6 @@ const Home = () => {
             label: 'LinkedIn',
         },
         {
-            icon: <FaTwitter />,
-            url: 'https://twitter.com/jagadeeshwar_r',
-            label: 'Twitter',
-        },
-        {
             icon: <FaEnvelope />,
             url: 'mailto:jagadeeshwar.reddy@live.in',
             label: 'Email',

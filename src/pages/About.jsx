@@ -104,7 +104,7 @@ const About = () => {
                                     style={{
                                         color: 'var(--color-text-secondary)',
                                         fontFamily: 'var(--font-primary)',
-                                        fontSize: 'var(--font-size-base)',
+                                        fontSize: 'var(--font-size-lg)',
                                         lineHeight: 'var(--line-height-relaxed)'
                                     }}
                                 >
@@ -118,7 +118,7 @@ const About = () => {
                                     style={{
                                         color: 'var(--color-text-secondary)',
                                         fontFamily: 'var(--font-primary)',
-                                        fontSize: 'var(--font-size-base)',
+                                        fontSize: 'var(--font-size-lg)',
                                         lineHeight: 'var(--line-height-relaxed)'
                                     }}
                                 >
@@ -132,7 +132,7 @@ const About = () => {
                                     style={{
                                         color: 'var(--color-text-secondary)',
                                         fontFamily: 'var(--font-primary)',
-                                        fontSize: 'var(--font-size-base)',
+                                        fontSize: 'var(--font-size-lg)',
                                         lineHeight: 'var(--line-height-relaxed)'
                                     }}
                                 >
@@ -174,11 +174,11 @@ const About = () => {
                             />
                             <InfoCard
                                 title="Education"
-                                content="B.Tech in Computer Science"
+                                content="B.Tech in Electronics & Communications Engineering from JNTU Hyderabad"
                             />
                             <InfoCard
                                 title="Location"
-                                content="Hyderabad, India"
+                                content="Bangalore, India"
                             />
                         </motion.div>
                     </motion.div>
@@ -208,7 +208,7 @@ const InfoCard = ({ title, content }) => (
         <p style={{
             color: 'var(--color-text-secondary)',
             fontFamily: 'var(--font-primary)',
-            fontSize: 'var(--font-size-base)',
+            fontSize: 'var(--font-size-lg)',
             lineHeight: 'var(--line-height-relaxed)'
         }}>
             {content}

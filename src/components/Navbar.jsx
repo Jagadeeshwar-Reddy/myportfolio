@@ -70,18 +70,24 @@ const Navbar = () => {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
-                    {/* Logo */}
+                    {/* Logo - Stacked on mobile, inline on larger screens */}
                     <Link
                         to="/"
                         className="flex-shrink-0 focus:outline-none focus:ring-2 rounded-xl p-2 focus-ring"
                         aria-label="Home"
                     >
                         <motion.h1
-                            className="text-2xl font-bold text-gradient font-display"
+                            className="text-lg sm:text-xl md:text-2xl font-bold text-gradient font-display"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Jagadeeshwar Reddy
+                            {/* Mobile: Stacked layout */}
+                            <div className="sm:hidden flex flex-col leading-tight">
+                                <span>Jagadeeshwar</span>
+                                <span>Reddy</span>
+                            </div>
+                            {/* Desktop: Inline layout */}
+                            <span className="hidden sm:inline">Jagadeeshwar Reddy</span>
                         </motion.h1>
                     </Link>
 

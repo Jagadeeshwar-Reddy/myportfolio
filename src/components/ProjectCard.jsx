@@ -114,7 +114,7 @@ const ProjectCard = ({ project }) => {
                     style={{
                         color: 'var(--color-text-secondary)',
                         fontFamily: 'var(--font-primary)',
-                        fontSize: 'var(--font-size-xs)',
+                        fontSize: 'var(--font-size-base)',
                         lineHeight: 'var(--line-height-relaxed)'
                     }}
                 >
@@ -142,7 +142,7 @@ const ProjectCard = ({ project }) => {
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-xs)'
+                                    fontSize: 'var(--font-size-base)'
                                 }}
                             >
                                 {stats.users} Users
@@ -157,7 +157,7 @@ const ProjectCard = ({ project }) => {
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-xs)'
+                                    fontSize: 'var(--font-size-base)'
                                 }}
                             >
                                 {stats.rating} Rating
@@ -182,7 +182,7 @@ const ProjectCard = ({ project }) => {
                                     color: 'var(--color-text-primary)',
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-semibold)',
-                                    fontSize: 'var(--font-size-xs)'
+                                    fontSize: 'var(--font-size-base)'
                                 }}
                             >
                                 Impact
@@ -193,7 +193,7 @@ const ProjectCard = ({ project }) => {
                             style={{
                                 color: 'var(--color-text-secondary)',
                                 fontFamily: 'var(--font-primary)',
-                                fontSize: 'var(--font-size-xs)',
+                                fontSize: 'var(--font-size-base)',
                                 lineHeight: 'var(--line-height-relaxed)',
                                 backgroundColor: 'var(--color-surface-light)',
                                 borderColor: 'var(--color-border)'
@@ -214,7 +214,7 @@ const ProjectCard = ({ project }) => {
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-xs)',
+                                    fontSize: 'var(--font-size-base)',
                                     backgroundColor: 'var(--color-surface-light)',
                                     color: 'var(--color-primary)',
                                     borderColor: 'var(--color-border)'
@@ -229,7 +229,7 @@ const ProjectCard = ({ project }) => {
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-xs)',
+                                    fontSize: 'var(--font-size-base)',
                                     backgroundColor: 'var(--color-surface-light)',
                                     color: 'var(--color-text-muted)',
                                     borderColor: 'var(--color-border)'
@@ -256,7 +256,7 @@ const ProjectCard = ({ project }) => {
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-xs)',
+                                    fontSize: 'var(--font-size-base)',
                                     color: 'var(--color-text-secondary)'
                                 }}
                                 onMouseEnter={(e) => {
@@ -279,7 +279,7 @@ const ProjectCard = ({ project }) => {
                                 style={{
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-xs)',
+                                    fontSize: 'var(--font-size-base)',
                                     color: 'var(--color-text-secondary)'
                                 }}
                                 onMouseEnter={(e) => {
@@ -297,7 +297,7 @@ const ProjectCard = ({ project }) => {
                             <span
                                 style={{
                                     fontFamily: 'var(--font-primary)',
-                                    fontSize: 'var(--font-size-xs)',
+                                    fontSize: 'var(--font-size-base)',
                                     fontStyle: 'italic',
                                     color: 'var(--color-text-muted)'
                                 }}

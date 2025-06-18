@@ -59,7 +59,7 @@ const SkillCard = ({ category, skills, delay = 0 }) => {
                                     color: 'var(--color-text-secondary)',
                                     fontFamily: 'var(--font-primary)',
                                     fontWeight: 'var(--font-weight-medium)',
-                                    fontSize: 'var(--font-size-xs)'
+                                    fontSize: 'var(--font-size-sm)'
                                 }}
                             >
                                 {skill.name}
@@ -68,7 +68,7 @@ const SkillCard = ({ category, skills, delay = 0 }) => {
                                 style={{
                                     color: 'var(--color-text-muted)',
                                     fontFamily: 'var(--font-primary)',
-                                    fontSize: 'var(--font-size-xs)'
+                                    fontSize: 'var(--font-size-sm)'
                                 }}
                             >
                                 {skill.level}%

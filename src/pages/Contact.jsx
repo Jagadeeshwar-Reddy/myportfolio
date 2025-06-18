@@ -26,8 +26,8 @@ const Contact = () => {
         {
             icon: <FaMapMarkerAlt className="w-6 h-6" />,
             title: 'Location',
-            content: 'Hyderabad, India',
-            link: 'https://maps.google.com/?q=Hyderabad,India',
+            content: 'Bangaluru, India',
+            link: 'https://maps.google.com/?q=Bangaluru,India',
         },
     ];
 
@@ -43,12 +43,6 @@ const Contact = () => {
             title: 'GitHub',
             content: 'jagadeeshwar-reddy',
             link: 'https://github.com/jagadeeshwar-reddy',
-        },
-        {
-            icon: <FaTwitter className="w-6 h-6" />,
-            title: 'Twitter',
-            content: '@jagadeeshwar_r',
-            link: 'https://twitter.com/jagadeeshwar_r',
         },
     ];
 

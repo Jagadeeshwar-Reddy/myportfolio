@@ -31,7 +31,7 @@ const Portfolio = () => {
             image: tescoImage,
             category: 'ecommerce',
             technologies: ['Swift 5', 'iOS 14 SDK', 'MVC/MVVM', 'GraphQL', 'UI Automation', 'CocoaPods'],
-            demoUrl: 'https://apps.apple.com/app/tesco-groceries',
+            demoUrl: 'https://apps.apple.com/in/app/tesco-groceries/id389581236',
             githubUrl: '#',
             stats: {
                 users: '1.5M+',
@@ -45,7 +45,7 @@ const Portfolio = () => {
             image: ubloodImage,
             category: 'healthcare',
             technologies: ['Swift 5', 'iOS 14 SDK', 'MVC/MVVM', 'REST APIs', 'Core Location', 'JSON'],
-            demoUrl: 'https://apps.apple.com/app/ublood',
+            demoUrl: 'https://apps.apple.com/in/app/ublood/id1496840388',
             githubUrl: '#',
             stats: {
                 users: 'Global',
@@ -59,7 +59,7 @@ const Portfolio = () => {
             image: homepadImage,
             category: 'enterprise',
             technologies: ['Objective-C & Swift', 'iOS 9.0 SDK', 'SQLite', 'JSON Web Services', 'PDF Generation', 'Cloud Backup'],
-            demoUrl: 'https://apps.apple.com/app/homepad',
+            demoUrl: 'https://apps.apple.com/gb/app/homepad-app-rental-inspection/id6443623665',
             githubUrl: '#',
             stats: {
                 users: 'Revolutionary',
@@ -68,26 +68,12 @@ const Portfolio = () => {
             impact: 'First digital inventory management solution'
         },
         {
-            title: 'Sydney Airport App',
-            description: 'Official Sydney Airport app providing live flight information, real-time updates, terminal navigation, and comprehensive airport services. Features interactive maps for T1 International and T2 Domestic terminals.',
-            image: sydneyAirportImage,
-            category: 'travel',
-            technologies: ['Objective-C', 'iOS 4.0 SDK', 'SQLite', 'Push Notifications', 'SOAP Web Services', 'XML'],
-            demoUrl: 'https://apps.apple.com/app/sydney-airport',
-            githubUrl: '#',
-            stats: {
-                users: 'Airport Visitors',
-                rating: '4.6',
-            },
-            impact: 'Enhanced travel experience'
-        },
-        {
             title: 'WeComeToYou Home Cleaning',
             description: 'On-demand home services app allowing users to book appointments for home cleaning, laundry, and car wash services. Provides seamless and convenient booking experience.',
             image: wecometoyouImage,
             category: 'services',
             technologies: ['Swift 3', 'iOS 9.0 SDK', 'SQLite', 'RESTful JSON', 'HTML'],
-            demoUrl: '#',
+            demoUrl: 'https://www.facebook.com/wecometoyouhomecleaning/',
             githubUrl: '#',
             stats: {
                 users: 'Service Users',
@@ -178,6 +164,20 @@ const Portfolio = () => {
                 rating: '3.9',
             },
             impact: 'Local community communication'
+        },
+        {
+            title: 'Sydney Airport App',
+            description: 'Official Sydney Airport app providing live flight information, real-time updates, terminal navigation, and comprehensive airport services. Features interactive maps for T1 International and T2 Domestic terminals.',
+            image: sydneyAirportImage,
+            category: 'travel',
+            technologies: ['Objective-C', 'iOS 4.0 SDK', 'SQLite', 'Push Notifications', 'SOAP Web Services', 'XML'],
+            demoUrl: 'https://apps.apple.com/app/sydney-airport',
+            githubUrl: '#',
+            stats: {
+                users: 'Airport Visitors',
+                rating: '4.6',
+            },
+            impact: 'Enhanced travel experience'
         }
     ];
 

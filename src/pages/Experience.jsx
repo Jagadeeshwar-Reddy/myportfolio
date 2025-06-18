@@ -108,7 +108,7 @@ const Experience = () => {
 
                     {/* Timeline */}
                     <div className="relative">
-                        {/* Central Timeline Line - Hidden on mobile */}
+                        {/* Central Timeline Line - Desktop only */}
                         <div
                             className="absolute left-[80%] transform -translate-x-1/2 w-1 hidden lg:block"
                             style={{
@@ -119,7 +119,7 @@ const Experience = () => {
                             }}
                         ></div>
 
-                        {/* Present Badge at Top - Responsive */}
+                        {/* Present Badge at Top - Desktop only */}
                         <div className="absolute left-[80%] -translate-x-1/2 top-0 z-20 hidden lg:block">
                             <div
                                 className="text-white px-6 md:px-8 py-2 md:py-3 rounded-full shadow-lg flex items-center space-x-2"
@@ -135,22 +135,6 @@ const Experience = () => {
                             </div>
                         </div>
 
-                        {/* Mobile Present Badge */}
-                        <div className="lg:hidden mb-8 text-center">
-                            <div
-                                className="inline-flex items-center space-x-2 text-white px-6 py-3 rounded-full shadow-lg"
-                                style={{
-                                    background: 'var(--gradient-primary)',
-                                    fontFamily: 'var(--font-primary)',
-                                    fontWeight: 'var(--font-weight-bold)',
-                                    fontSize: 'var(--font-size-base)'
-                                }}
-                            >
-                                <FaBriefcase className="w-4 h-4" />
-                                <span>Present</span>
-                            </div>
-                        </div>
-
                         {/* Timeline Items */}
                         <div className="space-y-8 md:space-y-12 lg:space-y-24">
                             {chronologicalExperiences.map((exp, index) => (
@@ -162,7 +146,7 @@ const Experience = () => {
                                     viewport={{ once: true }}
                                     className="relative flex items-center lg:gap-12"
                                 >
-                                    {/* Experience Card */}
+                                    {/* Experience Card - Full width on mobile, normal on desktop */}
                                     <div className="w-full lg:w-4/5 lg:pr-24">
                                         <motion.div
                                             whileHover={{ y: -5 }}
@@ -210,7 +194,7 @@ const Experience = () => {
                                                             style={{
                                                                 color: 'var(--color-text-secondary)',
                                                                 fontFamily: 'var(--font-primary)',
-                                                                fontSize: 'var(--font-size-sm)'
+                                                                fontSize: 'var(--font-size-base)'
                                                             }}
                                                         >
                                                             <div className="flex items-center space-x-1">
@@ -261,7 +245,7 @@ const Experience = () => {
                                                             color: 'var(--color-text-primary)',
                                                             fontFamily: 'var(--font-primary)',
                                                             fontWeight: 'var(--font-weight-semibold)',
-                                                            fontSize: 'var(--font-size-sm)'
+                                                            fontSize: 'var(--font-size-base)'
                                                         }}
                                                     >
                                                         Key Impact
@@ -275,7 +259,7 @@ const Experience = () => {
                                                         color: 'var(--color-text-secondary)',
                                                         fontFamily: 'var(--font-primary)',
                                                         fontWeight: 'var(--font-weight-medium)',
-                                                        fontSize: 'var(--font-size-sm)',
+                                                        fontSize: 'var(--font-size-base)',
                                                         lineHeight: 'var(--line-height-relaxed)'
                                                     }}
                                                 >
@@ -309,7 +293,7 @@ const Experience = () => {
                                                                     style={{
                                                                         color: 'var(--color-text-secondary)',
                                                                         fontFamily: 'var(--font-primary)',
-                                                                        fontSize: 'var(--font-size-sm)',
+                                                                        fontSize: 'var(--font-size-base)',
                                                                         lineHeight: 'var(--line-height-relaxed)'
                                                                     }}
                                                                 >
@@ -346,7 +330,7 @@ const Experience = () => {
                                                                         style={{
                                                                             color: 'var(--color-text-secondary)',
                                                                             fontFamily: 'var(--font-primary)',
-                                                                            fontSize: 'var(--font-size-sm)',
+                                                                            fontSize: 'var(--font-size-base)',
                                                                             lineHeight: 'var(--line-height-relaxed)'
                                                                         }}
                                                                     >
@@ -384,7 +368,7 @@ const Experience = () => {
                                                                         borderColor: 'var(--color-border)',
                                                                         fontFamily: 'var(--font-primary)',
                                                                         fontWeight: 'var(--font-weight-medium)',
-                                                                        fontSize: 'var(--font-size-sm)'
+                                                                        fontSize: 'var(--font-size-base)'
                                                                     }}
                                                                 >
                                                                     <FaCode className="w-2.5 h-2.5 md:w-3 md:h-3" style={{ color: 'var(--color-primary-light)' }} /> {tech}
@@ -401,7 +385,7 @@ const Experience = () => {
                                                     className="leading-relaxed"
                                                     style={{
                                                         color: 'var(--color-text-secondary)',
-                                                        fontSize: 'var(--font-size-sm)',
+                                                        fontSize: 'var(--font-size-base)',
                                                         fontFamily: 'var(--font-primary)'
                                                     }}
                                                 >
@@ -411,7 +395,7 @@ const Experience = () => {
                                         </motion.div>
                                     </div>
 
-                                    {/* Timeline Dot - Hidden on mobile */}
+                                    {/* Timeline Dot - Desktop only */}
                                     <div
                                         className="absolute left-[80%] transform -translate-x-1/2 w-6 h-6 rounded-full border-4 shadow-lg z-10 hidden lg:block"
                                         style={{
@@ -425,7 +409,7 @@ const Experience = () => {
                                         ></div>
                                     </div>
 
-                                    {/* Year Badge - Hidden on mobile */}
+                                    {/* Year Badge - Desktop only */}
                                     {index === 1 && (
                                         <div className="absolute left-[80%] transform -translate-x-1/2 -translate-y-1/2 -top-20 mb-6 hidden lg:block">
                                             <div
@@ -440,26 +424,11 @@ const Experience = () => {
                             ))}
                         </div>
 
-                        {/* Timeline End Point - Hidden on mobile */}
+                        {/* Timeline End Point - Desktop only */}
                         <div className="absolute left-[80%] -translate-x-1/2 bottom-0 z-20 hidden lg:block">
                             <div
                                 className="text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-sm md:text-lg font-bold shadow-lg flex items-center"
                                 style={{ background: 'var(--gradient-primary)' }}
-                            >
-                                <span>2011</span>
-                            </div>
-                        </div>
-
-                        {/* Mobile End Badge */}
-                        <div className="lg:hidden mt-8 text-center">
-                            <div
-                                className="inline-flex items-center text-white px-6 py-3 rounded-full shadow-lg"
-                                style={{
-                                    background: 'var(--gradient-primary)',
-                                    fontFamily: 'var(--font-primary)',
-                                    fontWeight: 'var(--font-weight-bold)',
-                                    fontSize: 'var(--font-size-base)'
-                                }}
                             >
                                 <span>2011</span>
                             </div>

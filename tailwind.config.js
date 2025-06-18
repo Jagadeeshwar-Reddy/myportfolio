@@ -31,9 +31,11 @@ export default {
                 },
             },
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
-                mono: ['JetBrains Mono', 'monospace'],
-                display: ['JetBrains Mono', 'monospace'],
+                sans: ['var(--font-primary)', 'system-ui', 'sans-serif'],
+                mono: ['var(--font-mono)', 'monospace'],
+                display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+                primary: ['var(--font-primary)', 'system-ui', 'sans-serif'],
+                secondary: ['var(--font-secondary)', 'system-ui', 'sans-serif'],
             },
             animation: {
                 'gradient-x': 'gradient-x 15s ease infinite',
@@ -82,7 +84,7 @@ export default {
                             content: '""'
                         },
                         code: {
-                            fontFamily: 'JetBrains Mono, monospace',
+                            fontFamily: 'var(--font-mono)',
                             fontWeight: '400',
                         },
                     },
