@@ -103,7 +103,7 @@ const Home = () => {
                                         letterSpacing: 'var(--letter-spacing-tight)'
                                     }}
                                 >
-                                    <TypeWriter words={["Principal iOS Engineer"]} typingSpeed={90} deletingSpeed={40} pauseTime={2500} />
+                                    <TypeWriter words={["Principal iOS Engineer & Technical leader"]} typingSpeed={90} deletingSpeed={40} pauseTime={2500} />
                                 </motion.h2>
 
                                 <motion.p
@@ -117,7 +117,7 @@ const Home = () => {
                                         lineHeight: 'var(--line-height-relaxed)'
                                     }}
                                 >
-                                    Crafting exceptional mobile experiences with 13+ years of expertise in Swift, SwiftUI, and enterprise iOS development.
+                                    Crafting exceptional mobile experiences with 14+ years of expertise in Swift, SwiftUI, and enterprise iOS development.
                                 </motion.p>
                             </div>
 
@@ -136,7 +136,7 @@ const Home = () => {
                                     Get In Touch
                                 </Link>
                                 <a
-                                    href="/portfolio-resume.html"
+                                    href={`${import.meta.env.BASE_URL}portfolio-resume.html`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="btn-outline group"
