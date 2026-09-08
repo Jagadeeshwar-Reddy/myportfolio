@@ -34,21 +34,21 @@ const Experience = () => {
             location: "Bengaluru, Karnataka",
             type: "Full-time",
             logo: tescoLogo,
-            description: "Leading iOS development for Tesco Groceries app, serving over 1.5 million customers across multiple regions with focus on scalable e-commerce solutions.",
+            description: "Driving iOS engineering for the Tesco Shop App and Clubcard ecosystem, supporting approximately 8M monthly users, 1.5M daily customer sessions, and 65K+ daily grocery orders across key retail domains.",
             responsibilities: [
-                "Engineered and built the Tesco Groceries app from scratch, collaborating with senior engineers and architects",
-                "Serving over 1.5 million iOS customers and facilitating an average of 80K daily orders from iOS app",
-                "Implemented CI/CD pipelines on Azure platform to streamline application distribution",
-                "Led the QA-Automation initiative, reducing regression testing time by over 40% and saving ~36 hours of manual testing per release",
-                "Mentored junior engineers, promoting technical excellence and best practices in mobile app development",
-                "Collaborated with stakeholders across multiple regions (UK, Ireland, Czech Republic, Hungary, Slovakia)"
+                "Led delivery of strategic mobile initiatives across Loyalty, In-Store, Marketplace, Basket, Whoosh, Clubcard Pay+, and Retail Media domains",
+                "Designed and implemented a reusable DCS component framework powering Sponsored Brand Pages and accelerating rollout of L1/L2 category experiences",
+                "Architected an offline-first shopping list solution with synchronization and conflict resolution to improve reliability and customer experience",
+                "Built and scaled a mobile QA automation framework integrated with Azure DevOps and Zephyr, improving release confidence and reducing regression effort",
+                "Optimized basket synchronization architecture, cutting API traffic by approximately 1M requests per day while preserving basket accuracy",
+                "Drove platform excellence through security initiatives, observability improvements, automation tooling, technical debt reduction, mentoring, and 50+ technical interviews annually"
             ],
-            technologies: ["Swift", "SwiftUI", "Objective-C", "Xcode", "Azure DevOps", "GraphQL", "CocoaPods", "Git", "Jenkins", "Fastlane"],
+            technologies: ["Swift", "SwiftUI", "Objective-C", "Xcode", "Azure DevOps", "GraphQL", "AppDynamics", "New Relic", "Zephyr", "Git", "Jenkins", "Fastlane"],
             achievements: [
-                "Successfully delivered Tesco Groceries app serving 1.5M+ customers across 5 regions",
-                "Reduced regression testing time by 40% through QA automation framework",
-                "Facilitated 80K daily orders through iOS app optimization",
-                "Streamlined app release cycles and enhanced quality for mango releases"
+                "Contributed to Tesco Retail Media through Sponsored Brand Pages supporting a business initiative forecasted to generate approximately £2.8M in annual media revenue",
+                "Built scalable Sponsored Brand Pages architecture with a reusable DCS-driven content framework for Tesco Retail Media",
+                "Reduced basket synchronization traffic by ~1M requests per day through adaptive optimization of the sync architecture",
+                "Established a mobile automation platform and reporting ecosystem to improve release quality and engineering confidence at scale"
             ]
         },
         {

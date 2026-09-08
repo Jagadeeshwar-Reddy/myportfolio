@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jagadeeshwar Reddy | Resume Portfolio</title>
+    <style>
+        :root {
+            --color-primary: #166534;
+            --color-primary-light: #16a34a;
+            --color-accent: #047857;
+            --color-text: #111827;
+            --color-text-muted: #4b5563;
+            --color-border: #d1d5db;
+            --color-surface: #f9fafb;
+            --color-white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            color: var(--color-text);
+            background: #e5e7eb;
+            line-height: 1.5;
+        }
+
+        .document {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 12px auto;
+            background: var(--color-white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .page {
+            padding: 14mm 14mm;
+            page-break-after: always;
+        }
+
+        .page:last-child {
+            page-break-after: auto;
+        }
+
+        .header {
+            border-bottom: 3px solid var(--color-primary-light);
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+        }
+
+        .name {
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.1;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .title {
+            margin: 5px 0 8px;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-top: 2px;
+            font-size: 11.5px;
+            color: var(--color-text-muted);
+            align-items: center;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1.3;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 14px;
+            flex-shrink: 0;
+            color: var(--color-primary);
+            stroke-width: 2.2;
+            background: rgba(22, 101, 52, 0.08);
+            border-radius: 9999px;
+            padding: 8px;
+            box-sizing: content-box;
+        }
+
+        .contact-row a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .print-instructions {
+            margin-top: 8px;
+            padding: 8px 10px;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            background: var(--color-surface);
+            font-size: 12px;
+            color: var(--color-text-muted);
+        }
+
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            margin: 0 0 6px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+        }
+
+        p {
+            margin: 0 0 6px;
+            font-size: 12px;
+        }
+
+        .summary {
+            font-size: 12.5px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1.4fr 0.9fr;
+            gap: 16px;
+        }
+
+        .entry {
+            margin-bottom: 12px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+
+        .entry-role {
+            font-size: 12.5px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .entry-company {
+            margin: 2px 0 0;
+            font-size: 12px;
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        .entry-meta {
+            text-align: right;
+            font-size: 11px;
+            color: var(--color-text-muted);
+            white-space: nowrap;
+        }
+
+        ul {
+            margin: 5px 0 0 16px;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 4px;
+            font-size: 11.5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+
+        .skill-block {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 8px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .skill-block h4 {
+            margin: 0 0 4px;
+            font-size: 11.5px;
+            color: var(--color-primary);
+        }
+
+        .skill-block p {
+            margin: 0;
+            font-size: 11px;
+            color: var(--color-text-muted);
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .highlight-card {
+            border: 1px solid var(--color-border);
+            border-left: 4px solid var(--color-primary-light);
+            border-radius: 8px;
+            padding: 8px;
+            background: var(--color-white);
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .highlight-card h4 {
+            margin: 0 0 3px;
+            font-size: 11.5px;
+            color: var(--color-primary);
+        }
+
+        .highlight-card p {
+            margin: 0;
+            font-size: 11px;
+        }
+
+        .project {
+            margin-bottom: 10px;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .project-title {
+            margin: 0 0 3px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .project-meta {
+            font-size: 11px;
+            color: var(--color-text-muted);
+            margin-bottom: 3px;
+        }
+
+        .footer-note {
+            margin-top: 10px;
+            font-size: 10px;
+            color: var(--color-text-muted);
+            text-align: center;
+        }
+
+        .page-two-start {
+            margin-top: 0;
+        }
+
+        @page {
+            size: A4;
+            margin: 10mm;
+        }
+
+        @media print {
+            body {
+                background: var(--color-white);
+            }
+
+            .document {
+                width: auto;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .page {
+                margin: 0;
+                min-height: auto;
+            }
+
+            .print-instructions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <section class="page">
+            <header class="header">
+                <h1 class="name">Jagadeeshwar Reddy M</h1>
+                <div class="title">Principal iOS Engineer | Senior Mobile Architect | Swift / SwiftUI / UIKit</div>
+                <div class="contact-row">
+                    <span class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Bangalore, India</span>
+                    </span>
+                    <span class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.79.61 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.18a2 2 0 0 1 2.11-.45c.86.28 1.75.49 2.65.61A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <span>+91 9700884117</span>
+                    </span>
+                    <a class="contact-item" href="mailto:jagadeeshwar.reddy@live.in">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"></path>
+                            <path d="m22 6-10 7L2 6"></path>
+                        </svg>
+                        <span>jagadeeshwar.reddy@live.in</span>
+                    </a>
+                    <a class="contact-item" href="https://www.linkedin.com/in/jagadeeshwar-reddy-mudiyala-4786b83a/">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3A1.97 1.97 0 1 0 5.3 6.94 1.97 1.97 0 0 0 5.25 3ZM20.44 12.56c0-3.46-1.85-5.07-4.32-5.07-1.99 0-2.88 1.09-3.38 1.85V8.5H9.38c.04.56 0 11.5 0 11.5h3.36v-6.42c0-.34.02-.68.12-.92.27-.68.9-1.38 1.95-1.38 1.38 0 1.93 1.04 1.93 2.57V20h3.37v-7.44Z"></path>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+                <div class="print-instructions">
+                    For clean PDF export, open Print settings and disable <strong>Headers and footers</strong> so browser file paths and page URLs do not appear in the output.
+                </div>
+            </header>
+
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="summary">
+                    Technical leader and Principal iOS Engineer with <strong>14+ years</strong> of experience building scalable, secure, and high-performing mobile applications across e-commerce, loyalty, retail media, real estate, travel, healthcare, and consumer platforms. Deep expertise in Swift, SwiftUI, UIKit, mobile architecture, performance optimization, release engineering, and platform security. Proven track record of delivering large-scale customer experiences, driving technical strategy, mentoring engineers, and translating business goals into measurable mobile outcomes.
+                </p>
+            </section>
+
+            <div class="two-column">
+                <div>
+                    <section class="section">
+                        <h2 class="section-title">Professional Experience</h2>
+
+                        <div class="entry">
+                            <div class="entry-header">
+                                <div>
+                                    <h3 class="entry-role">Software Development Engineer II</h3>
+                                    <p class="entry-company">Tesco Bengaluru Pvt Ltd</p>
+                                </div>
+                                <div class="entry-meta">
+                                    <div><strong>Aug 2015 – Present</strong></div>
+                                    <div>Bengaluru, India</div>
+                                </div>
+                            </div>
+                            <p>
+                                Driving iOS engineering for the Tesco Shop App and Clubcard ecosystem, supporting approximately 8M monthly users, <strong>1.5M</strong> daily customer sessions, and <strong>70K+</strong> daily grocery orders across key retail domains.
+                            </p>
+                            <ul>
+                                <li>Led strategic mobile initiatives across Loyalty, In-Store, Marketplace, Basket, Whoosh, Clubcard Pay+, and Retail Media domains.</li>
+                                <li>Designed a reusable DCS component framework powering Sponsored Brand Pages and accelerating rollout of L1/L2 category experiences.</li>
+                                <li>Contributed to Tesco Retail Media strategy through Sponsored Brand Pages supporting a business initiative forecasted to generate <strong>~£2.8M</strong> annual media revenue.</li>
+                                <li>Architected an offline-first shopping list solution with synchronization and conflict resolution for resilient customer experiences.</li>
+                                <li>Built and scaled a mobile QA automation framework integrated with Azure DevOps and Zephyr, improving release confidence and reducing regression effort.</li>
+                                <li>Optimized basket synchronization architecture, reducing API traffic by approximately <strong>1M requests per day (~10%)</strong> while preserving basket accuracy.</li>
+                                <li>Drove platform excellence through security initiatives, observability improvements, automation tooling, technical debt reduction, mentoring, and technical interviews annually.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+                <div>
+                    <section class="section">
+                        <h2 class="section-title">Core Skills</h2>
+                        <div class="skills-grid">
+                            <div class="skill-block">
+                                <h4>iOS Engineering</h4>
+                                <p>Swift, Objective-C, SwiftUI, UIKit, Combine, Core Data, Auto Layout, Core Animation, React-Native</p>
+                            </div>
+                            <div class="skill-block">
+                                <h4>Architecture & Platform</h4>
+                                <p>MVC, MVVM, Offline-first design, Synchronization, Observability, Security, Universal Links, Performance optimization</p>
+                            </div>
+                            <div class="skill-block">
+                                <h4>Tools</h4>
+                                <p>Xcode, Git, Fastlane, GraphQL, AppDynamics, New Relic, REST APIs, TestFlight, App Store Connect</p>
+                            </div>
+                            <div class="skill-block">
+                                <h4>Delivery & Quality</h4>
+                                <p>CI/CD, Azure DevOps, Zephyr, QA Automation, Release Engineering, Code Review, Technical Documentation</p>
+                            </div>
+                            <div class="skill-block">
+                                <h4>Leadership</h4>
+                                <p>Technical mentoring, architecture discussions, stakeholder collaboration, interviewing, agile delivery, engineering excellence</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- <section class="section">
+                        <h2 class="section-title">Education</h2>
+                        <p><strong>B.Tech</strong> in Electronics &amp; Communications Engineering</p>
+                        <p>JNTU Hyderabad</p>
+                    </section> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="page">
+            <section class="section page-two-start">
+                <h2 class="section-title">Professional Experience</h2>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <div>
+                            <h3 class="entry-role">Senior Software Engineer</h3>
+                            <p class="entry-company">TeleParadigm Networks Ltd</p>
+                        </div>
+                        <div class="entry-meta">
+                            <div><strong>Aug 2011 – Jul 2015</strong></div>
+                            <div>Hyderabad, India</div>
+                        </div>
+                    </div>
+                    <p>
+                        Architected and delivered 20+ iOS applications from inception to production across real estate, healthcare, travel, media, and consumer domains.
+                    </p>
+                    <ul>
+                        <li>Led end-to-end iOS development across multiple client products using Objective-C and Swift.</li>
+                        <li>Worked closely with product, QA, and engineering teams to deliver scalable, production-ready features.</li>
+                        <li>Established mobile engineering best practices and mentored junior developers across project teams.</li>
+                        <li>Built innovative apps including homePad, UBlood, and Sydney Airport, each solving distinct business and customer problems.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Selected Career Highlights</h2>
+                <div class="highlights">
+                    <div class="highlight-card">
+                        <h4>Retail Media Revenue Enablement</h4>
+                        <p>Contributed to Tesco Retail Media through Sponsored Brand Pages supporting a business initiative forecasted to generate approximately £2.8M in annual media revenue.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Reusable Content Framework</h4>
+                        <p>Built scalable Sponsored Brand Pages architecture using a reusable DCS-driven framework that accelerated rollout of category-led experiences.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Performance Optimization</h4>
+                        <p>Reduced basket synchronization traffic by approximately 1M requests per day through adaptive architecture optimization.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Quality Engineering</h4>
+                        <p>Established a mobile automation platform and reporting ecosystem that improved release quality and confidence at scale.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Security & Platform Engineering</h4>
+                        <p>Delivered platform improvements across PKP, Universal Links, observability, localization tooling, and CI/CD enhancements.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>Technical Leadership</h4>
+                        <p>Mentor engineers, influence design decisions, and conduct technical interviews annually while driving engineering best practices.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <section class="section">
+                <h2 class="section-title">Selected Projects</h2>
+
+                <div class="project">
+                    <div class="project-title">Tesco Groceries iPhone &amp; iPad</div>
+                    <div class="project-meta">Swift | GraphQL | Enterprise E-Commerce | Multi-region retail platform</div>
+                    <p>Feature-rich groceries shopping app serving large-scale customers across multiple regions(UK, Ireland, Czech Republic, Hungary, and Slovakia) with support for ordering, basket, promotions, and loyalty-led customer journeys.</p>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">UBlood</div>
+                    <div class="project-meta">Swift | Core Location | Healthcare</div>
+                    <p>Blood donation platform connecting donors and recipients through geolocation-enabled discovery and urgent request workflows.</p>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">homePad &amp; homePad Pro</div>
+                    <div class="project-meta">Objective-C / Swift | SQLite | Enterprise / Real Estate</div>
+                    <p>Digital property inventory and inspection reporting solution, positioned as an early iPad-first business workflow application.</p>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">Sydney Airport App</div>
+                    <div class="project-meta">Objective-C | Travel | Live flight information</div>
+                    <p>Official airport companion app offering flight information, real-time updates, terminal guidance, and passenger services.</p>
+                </div>
+            </section>   -->
+            
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="entry-header">
+                    <div>
+                        <p><strong>B.Tech</strong> in Electronics &amp; Communications Engineering</p>
+                        <p><strong>JNTU</strong> Hyderabad</p>
+                    </div>
+                    <div class="entry-meta">
+                        <div><strong>Oct 2007 – Apr 2011</strong></div>
+                        <div>7.3 GPA</div>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+                
+
+        
+    </div>
+</body>
+</html>

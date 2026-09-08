@@ -136,12 +136,13 @@ const Home = () => {
                                     Get In Touch
                                 </Link>
                                 <a
-                                    href="/CV_Jagadeeshwar Reddy_iOS_Developer.pdf"
-                                    download
+                                    href="/portfolio-resume.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="btn-outline group"
                                 >
                                     <FaDownload className="mr-2 group-hover:animate-bounce" />
-                                    Download CV
+                                    Open Resume
                                 </a>
                             </motion.div>
 
