@@ -9,8 +9,8 @@ export const themes = {
         description: 'Natural and professional green theme',
         colors: {
             primary: '#16a34a',
-            primaryDark: '#15803d',
-            primaryLight: '#22c55e',
+            primaryDark: '#15804d',
+            primaryLight: '#22c65e',
             secondary: '#059669',
             accent: '#f59e0b',
         },
